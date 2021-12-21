@@ -1,0 +1,67 @@
+{{! Garvity forms Single Line Text Field component https://docs.gravityforms.com/single-line-text-field/ https://docs.gravityforms.com/validation-errors/ }}
+
+<li
+        id="field_{{gFormIndex}}_{{gFormFieldIndex true}}"
+        class="gfield {{gformFieldErrorClass showError}} {{gformAddCustomClass customClass}} {{gformRequiredClass
+                required}}  field_sublabel_below field_description_below {{gformHideLabel
+                hideLabel}} gfield_visibility_visible"
+> {{! what does this mean -> http://prntscr.com/i3v7gm https://prnt.sc/i2p29u http://prntscr.com/i3w204 http://prntscr.com/i3v3j4 }}
+  <label class="gfield_label gfield_label_before_complex">
+    {{labelText}}{{#with required}}<span class="gfield_required">*</span>{{/with}}
+  </label>
+  <div class="clear-multi">
+    <div class="gfield_time_hour ginput_container ginput_container_time">
+      <input
+              type="text"
+              maxlength="2"
+              name="input_{{gFormFieldIndex}}[]"
+              id="input_{{gFormIndex}}_{{gFormFieldIndex}}_1"
+              value=""
+      >
+      <i>:</i>
+      <label for="input_{{gFormIndex}}_{{gFormFieldIndex}}_1">
+        {{#if HHLabelText}}
+          {{HHLabelText}}
+        {{else}}
+          HH
+        {{/if}}
+      </label>
+    </div>
+    <div class="gfield_time_minute ginput_container ginput_container_time">
+      <input
+              type="text"
+              maxlength="2"
+              name="input_{{gFormFieldIndex}}[]"
+              id="input_{{gFormIndex}}_{{gFormFieldIndex}}_2"
+              value=""
+      >
+      <label for="input_{{gFormIndex}}_{{gFormFieldIndex}}_2">
+        {{#if MMLabelText}}
+          {{MMLabelText}}
+        {{else}}
+          MM
+        {{/if}}
+      </label>
+    </div>
+    {{#ifequal timeFormat 12}}
+      <div class="gfield_time_ampm ginput_container ginput_container_time">
+        <select name="input_{{gFormFieldIndex}}[]" id="input_{{gFormIndex}}_{{gFormFieldIndex}}_3">
+          <option value="am">AM</option>
+          <option value="pm">PM</option>
+        </select>
+      </div>
+    {{/ifequal}}
+  </div>
+  {{#if descriptionText}}
+    <div class="gfield_description">{{descriptionText}}</div>
+  {{/if}}
+  {{#if showError}}
+    <div class="gfield_description validation_message"> {{! what does it mean -> http://prntscr.com/i3y6bc }}
+      {{#if customValidationText}}
+        {{customValidationText}}
+      {{else}}
+        This field is required.
+      {{/if}}
+    </div>
+  {{/if}}
+</li>

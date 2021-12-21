@@ -1,0 +1,80 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <script>
+    ( function( a, b, c, d ) {
+      c = '';
+      for ( let i = 0; i < b; i++ ) {
+        if ( 'fontLoaderCss' === localStorage.key( i ).substring( 0, 13 ) ) {
+          c += "\r\n" + localStorage.getItem( localStorage.key( i ) );
+        }
+      }
+
+      if ( c ) {
+        d = a.createElement( 'style' );
+        d.rel = 'stylesheet';
+        a.head.appendChild( d );
+        d.textContent = c;
+      }
+    } )( document, localStorage.length );
+  </script>
+  <link rel="stylesheet" href="{{root}}css/styles.css" id="theme-styles-css">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "Your Organization Name",
+      "url": "http://www.example.com",
+      "logo": "http://www.example.com/images/logo.png",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-111-111-1111",
+          "contactType": "customer service"
+        }
+      ],
+      "sameAs": [
+        "http://www.facebook.com/your-profile",
+        "http://www.twitter.com/yourProfile",
+        "http://plus.google.com/your_profile"
+      ]
+    }
+  </script>
+</head>
+<body class="{{#ifpage 'index'}}home-page {{/ifpage}}{{bodyClass}}">
+  <div class="container">
+    {{>mobile-menu}}
+    <div class="content-wrap">
+      {{>header}}
+      <main class="main">
+        {{>body}}{{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+      </main>
+      {{>footer}}
+    </div>
+  </div>
+  <!-- ================================================== -->
+  <!-- This part is for including in html only, not for WP -->
+  <!-- ================================================== -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="//nwbp.devbucket.me/wp-content/plugins/gravityforms/js/gravityforms.min.js"></script>
+  <script src="//nwbp.devbucket.me/wp-content/plugins/gravityforms/js/jquery.json.min.js"></script>
+  <script id='theme-init-js-extra'>
+    const theme = {
+      'url': 'file:' === location.protocol ? '{{root}}' : location.pathname.startsWith( '/www/' ) ? '/www/' : '/',
+      'ajaxUrl': '\/wp-admin\/admin-ajax.php',
+      'ajaxNonce': 'd0b7158aec',
+      'googleMapsApiKey': 'AIzaSyC1BgSVg5b7vMGqbjalTl_0Rb9LmsrMpWE'
+    };
+    const theme_i18n = { 'more': 'View More', 'less': 'View Less' };
+  </script>
+  <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+  <!-- This part is for including in html only, not for WP -->
+  <!-- ================================================== -->
+  <script src="{{root}}js/init.js"></script>
+</body>
+</html>

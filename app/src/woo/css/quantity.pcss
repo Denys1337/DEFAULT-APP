@@ -1,0 +1,51 @@
+.quantity {
+  position: relative;
+  white-space: nowrap;
+  display: inline-block;
+
+  .qty {
+    height: 38px;
+    text-align: left;
+    width: 70px;
+    padding: 0 15px;
+    outline: 0;
+    font-size: 14px;
+    border: 0;
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  .qty-btn {
+    border: 0;
+    outline: 0;
+    font-size: 14px;
+    width: 26px;
+    height: 19px;
+    line-height: 19px;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 3px;
+    color: #ccc;
+
+    &.plus {
+      top: 0;
+    }
+
+    &.minus {
+      bottom: 0;
+      font-size: 19px;
+    }
+
+    &:--enter {
+      color: $text-color;
+    }
+  }
+}

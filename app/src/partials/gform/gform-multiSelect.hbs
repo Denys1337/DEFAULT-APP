@@ -1,0 +1,29 @@
+{{! Garvity forms Dropdown Field component https://docs.gravityforms.com/multi-select-field/ https://docs.gravityforms.com/validation-errors/ }}
+
+<li class="gfield {{gformFieldErrorClass showError}} {{gformAddCustomClass customClass}} {{gformRequiredClass
+        required}}  field_sublabel_below field_description_below {{gformHideLabel
+        hideLabel}} gfield_visibility_visible"> {{! what does it mean -> http://prntscr.com/i3v7gm https://prnt.sc/i2p29u http://prntscr.com/i3w204 http://prntscr.com/i3v3j4 }}
+  <label class="gfield_label" for="input_{{gFormIndex}}_{{gFormFieldIndex true}}">
+    {{labelText}}{{#with required}}<span class="gfield_required">*</span>{{/with}}
+  </label>
+  <div class="ginput_container ginput_container_multiselect">
+    <select multiple="multiple" size="7" name="input_{{gFormFieldIndex}}[]"
+            id="input_{{gFormIndex}}_{{gFormFieldIndex}}" class="medium gfield_select">
+      <option value="First Choice">First Choice</option>
+      <option value="Second Choice">Second Choice</option>
+      <option value="Third Choice">Third Choice</option>
+    </select>
+  </div>
+  {{#if descriptionText}}
+    <div class="gfield_description">{{descriptionText}}</div>
+  {{/if}}
+  {{#if showError}}
+    <div class="gfield_description validation_message"> {{! what does it mean -> http://prntscr.com/i3y6bc }}
+      {{#if customValidationText}}
+        {{customValidationText}}
+      {{else}}
+        This field is required.
+      {{/if}}
+    </div>
+  {{/if}}
+</li>

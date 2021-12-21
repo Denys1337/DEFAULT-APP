@@ -1,0 +1,12 @@
+{{! Garvity forms Confirmation component https://docs.gravityforms.com/form-confirmation/ }}
+
+<div id="gform_confirmation_wrapper_{{gFormIndex}}" class="gform_confirmation_wrapper {{customClass}}">
+  <div id="gform_confirmation_message_{{gFormIndex}}"
+       class="gform_confirmation_message_{{gFormIndex}} gform_confirmation_message">
+    {{#if confirmationText}}
+      {{confirmationText}}
+    {{else}}
+      Thanks for contacting us! We will get in touch with you shortly.
+    {{/if}}
+  </div>
+</div>

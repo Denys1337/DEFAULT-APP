@@ -1,0 +1,33 @@
+---
+title: Search result page
+---
+
+<section class="search-section">
+  <div class="inner">
+    <div class="title">
+      <h1 class="section-title left">
+        <span class="title__prefix">Search Results for: </span>
+        <span class="title__query">lorem</span>
+      </h1>
+    </div>
+    <div class="content">
+      {{> blog-item image="images/blog1.jpg" first="true"}}
+      {{> blog-item image="images/blog2.jpg"}}
+      {{> blog-item image="images/blog3.jpg"}}
+      {{> blog-item image="images/blog1.jpg"}}
+      {{> blog-item image="images/blog2.jpg"}}
+      {{> blog-item image="images/blog3.jpg"}}
+      {{> blog-item image="images/blog1.jpg"}}
+      {{> blog-item image="images/blog2.jpg"}}
+      {{> blog-item image="images/blog3.jpg"}}
+      {{> blog-item image="images/blog1.jpg"}}
+    </div>
+    <div class="pagination">
+      {{> pagination}}
+    </div>
+    <div class="new-search">
+      <h2>New Search</h2>
+      {{> search-form}}
+    </div>
+  </div>
+</section>

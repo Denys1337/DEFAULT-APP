@@ -1,0 +1,83 @@
+{{! Garvity forms Single Line Text Field component https://docs.gravityforms.com/single-line-text-field/ https://docs.gravityforms.com/validation-errors/ }}
+
+<li class="gfield {{gformFieldErrorClass showError}} {{gformAddCustomClass customClass}} {{gformRequiredClass
+        required}}  field_sublabel_below field_description_below {{gformHideLabel
+        hideLabel}} gfield_visibility_visible"> {{! what does this mean -> http://prntscr.com/i3v7gm https://prnt.sc/i2p29u http://prntscr.com/i3w204 http://prntscr.com/i3v3j4 }}
+  <label class="gfield_label" for="input_{{gFormIndex}}_{{gFormFieldIndex true}}">
+    {{labelText}}{{#with required}}<span class="gfield_required">*</span>{{/with}}
+  </label>
+  {{#ifequal fieldType 1}} {{! --> http://prntscr.com/if3q34}}
+    <div class="ginput_container ginput_container_select">
+      <select name="input_{{gFormFieldIndex}}" id="input_{{gFormIndex}}_{{gFormFieldIndex}}"
+              class="medium gfield_select" aria-required="true"
+              aria-invalid="false">
+        <option value="First Option|0">First Option</option>
+        <option value="Second Option|3">Second Option +$3.00</option>
+        <option value="Third Option|4">Third Option +$4.00</option>
+      </select>
+    </div>
+  {{/ifequal}}
+  {{#ifequal fieldType 2}}
+    <div class="ginput_container ginput_container_checkbox">
+      <ul class="gfield_checkbox" id="input_{{gFormIndex}}_{{gFormFieldIndex}}">
+        <li class="gchoice_{{gFormIndex}}_{{gFormFieldIndex}}_1">
+          <input name="input_{{gFormFieldIndex}}.1" type="checkbox" value="First Option|0"
+                 id="choice_{{gFormIndex}}_{{gFormFieldIndex}}_1">
+          <label for="choice_{{gFormIndex}}_{{gFormFieldIndex}}_1" id="label_{{gFormIndex}}_{{gFormFieldIndex}}_1">First
+            Option<span class="ginput_price"></span></label>
+        </li>
+        <li class="gchoice_{{gFormIndex}}_{{gFormFieldIndex}}_2">
+          <input name="input_{{gFormFieldIndex}}.2" type="checkbox" value="Second Option|3"
+                 id="choice_{{gFormIndex}}_{{gFormFieldIndex}}_2">
+          <label for="choice_{{gFormIndex}}_{{gFormFieldIndex}}_2" id="label_{{gFormIndex}}_{{gFormFieldIndex}}_2">Second
+            Option<span
+                    class="ginput_price"> +$3.00</span></label>
+        </li>
+        <li class="gchoice_{{gFormIndex}}_{{gFormFieldIndex}}_3">
+          <input name="input_{{gFormFieldIndex}}.3" type="checkbox" value="Third Option|4"
+                 id="choice_{{gFormIndex}}_{{gFormFieldIndex}}_3">
+          <label for="choice_{{gFormIndex}}_{{gFormFieldIndex}}_3" id="label_{{gFormIndex}}_{{gFormFieldIndex}}_3">Third
+            Option<span class="ginput_price"> +$4.00</span></label>
+        </li>
+      </ul>
+    </div>
+  {{/ifequal}}
+  {{#ifequal fieldType 3}}
+    <div class="ginput_container ginput_container_radio">
+      <ul class="gfield_radio" id="input_{{gFormIndex}}_{{gFormFieldIndex}}">
+        <li class="gchoice_{{gFormIndex}}_{{gFormFieldIndex}}_0">
+          <input name="input_{{gFormFieldIndex}}" type="radio" value="First Option|0"
+                 id="choice_{{gFormIndex}}_{{gFormFieldIndex}}_0">
+          <label for="choice_{{gFormIndex}}_{{gFormFieldIndex}}_0" id="label_{{gFormIndex}}_{{gFormFieldIndex}}_0">First
+            Option<span class="ginput_price"></span></label>
+        </li>
+        <li class="gchoice_{{gFormIndex}}_{{gFormFieldIndex}}_1">
+          <input name="input_{{gFormFieldIndex}}" type="radio" value="Second Option|3"
+                 id="choice_{{gFormIndex}}_{{gFormFieldIndex}}_1">
+          <label for="choice_{{gFormIndex}}_{{gFormFieldIndex}}_1" id="label_{{gFormIndex}}_{{gFormFieldIndex}}_1">Second
+            Option<span
+                    class="ginput_price"> +$3.00</span></label>
+        </li>
+        <li class="gchoice_{{gFormIndex}}_{{gFormFieldIndex}}_2">
+          <input name="input_{{gFormFieldIndex}}" type="radio" value="Third Option|4"
+                 id="choice_{{gFormIndex}}_{{gFormFieldIndex}}_2">
+          <label for="choice_{{gFormIndex}}_{{gFormFieldIndex}}_2" id="label_{{gFormIndex}}_{{gFormFieldIndex}}_2">Third
+            Option<span class="ginput_price"> +$4.00</span></label>
+        </li>
+      </ul>
+    </div>
+  {{/ifequal}}
+
+  {{#if descriptionText}}
+    <div class="gfield_description">{{descriptionText}}</div>
+  {{/if}}
+  {{#if showError}}
+    <div class="gfield_description validation_message"> {{! what does it mean -> http://prntscr.com/i3y6bc }}
+      {{#if customValidationText}}
+        {{customValidationText}}
+      {{else}}
+        This field is required.
+      {{/if}}
+    </div>
+  {{/if}}
+</li>

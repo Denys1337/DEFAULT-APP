@@ -1,0 +1,11 @@
+{{! part of gform-radioButtons partial }}
+
+<li class="gchoice gchoice_{{gFormIndex}}_{{gFormFieldIndex}}_{{gFormSubFieldIndex true}}">
+  <input
+      type="radio"
+      name="input_{{gFormFieldIndex}}"
+      value="{{defaultValue}}"
+      id="choice_{{gFormIndex}}_{{gFormFieldIndex}}_{{gFormSubFieldIndex true}}" {{#if checked}}checked{{/if}}
+  >
+  <label for="choice_{{gFormIndex}}_{{gFormFieldIndex}}_{{gFormSubFieldIndex}}">{{labelText}}</label>
+</li>

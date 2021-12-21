@@ -1,0 +1,273 @@
+---
+title: Gravity form Demo
+---
+
+<section class="form-section">
+  <div class="inner">
+    <h1 class="section-title">First post</h1>
+    {{>breadcrumbs}}
+    {{>breadcrumbs last="Other Title Page"}}
+    {{>breadcrumbs parents="parent 1/parent 2/parent 3"}}
+
+    {{#> gform-form
+      showError=false
+      showConfirmation=false
+    }}
+
+      {{#> gform-body showError=showError}}
+        {{> gform-singleLineText
+          showError=showError
+          customClass="test-class"
+          hideLabel=false
+          labelText="Label text"
+          required=true
+          typeTextOrPassword="text"
+          fieldSize="medium"
+          placeholderText="placeholder"
+          descriptionText="Description text"
+        }}
+        {{#> gform-html }}
+          <div>
+            <img src="https://image.prntscr.com/image/v8LoET9oRE6DKF1HGbUJ2A.png" width="120" height="120" alt="" title="">
+            <h4>This is a block of inline HTML content</h4>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+            <p> Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+
+            <p> In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, </p>
+          </div>
+        {{/gform-html}}
+        {{> gform-number
+          showError=showError
+          customClass="test-class"
+          hideLabel=false
+          labelText="Label text"
+          required=true
+          fieldSize="medium"
+          placeholderText="placeholder"
+          descriptionText="Description text"
+          min=1
+          max=100
+        }}
+        {{> gform-dropdown
+          showError=showError
+          customClass="test-class"
+          hideLabel=false
+          labelText="Label text"
+          required=true
+          fieldSize="medium"
+          placeholderText="placeholder"
+          descriptionText="Description text"
+        }}
+        {{> gform-multiSelect
+          showError=showError
+          customClass="test-class"
+          hideLabel=false
+          labelText="Label text"
+          required=true
+          fieldSize="medium"
+          descriptionText="Description text"
+        }}
+        {{> gform-paragraphText
+          showError=showError
+          customClass="test-class"
+          hideLabel=false
+          labelText="Label text"
+          required=true
+          fieldSize="medium"
+          descriptionText="Description text"
+          maxChar=20
+        }}
+        {{> gform-sectionBreak
+          customClass="test-class"
+          labelText="Label text"
+          descriptionText="Description text"
+        }}
+        {{#> gform-checkboxes
+          showError=showError
+          customClass="test-class"
+          hideLabel=false
+          labelText="Label text"
+          required=true
+          descriptionText="Description text"
+        }}
+          {{> gform-checkboxes-checkbox
+            labelText="Checkbox label text"
+            checked=true
+          }}
+        {{/gform-checkboxes}}
+        {{#> gform-radioButtons
+          showError=showError
+          customClass="test-class"
+          hideLabel=false
+          labelText="Label text"
+          required=true
+          descriptionText="Description text"
+          enableOtherChoice=true
+        }}
+          {{> gform-radioButtons-checkbox
+            labelText="radioButton label text"
+            checked=true
+          }}
+        {{/gform-radioButtons}}
+        {{> gform-fileUpload
+          showError=showError
+          customClass="test-class"
+          hideLabel=false
+          labelText="Label text"
+          required=true
+          fieldSize="medium"
+          descriptionText="Description text"
+          enableMultifile=true
+          maxFileSize=1
+          allowedExtension="jpg, gif, png, pdf"
+        }}
+        {{> gform-email
+          showError=showError
+          customClass="test-class"
+          hideLabel=false
+          labelText="Label text"
+          required=true
+          fieldSize="medium"
+          placeholderText="email"
+          descriptionText="Description text"
+          enableConfirmation=false
+          enterEmailLabel=""
+          confirmEmailLabel=""
+        }}
+        {{> gform-website
+          showError=showError
+          customClass="test-class"
+          hideLabel=false
+          labelText="Label text"
+          required=true
+          fieldSize="medium"
+          placeholderText="website"
+          descriptionText="Description text"
+        }}
+        {{> gform-address
+          showError=showError
+          customClass="test-class"
+          hideLabel=false
+          labelText="Label text"
+          required=true
+          fieldSize="medium"
+          placeholderText="website"
+          descriptionText="Description text"
+          addressType=1
+          hasStreet=true
+          hasStreet2=true
+          hasCity=true
+          hasState=true
+          hasZip=true
+          hasCountry=true
+        }}
+        {{> gform-name
+          showError=showError
+          customClass="test-class"
+          hideLabel=false
+          labelText="Label text"
+          required=true
+          fieldSize="medium"
+          placeholderText="website"
+          descriptionText="Description text"
+          hasPrefix=true
+          prefixLabelText=""
+          hasFirstName=true
+          firstLabelText=""
+          firstPlaceholderText=""
+          hasMiddleName=true
+          middleLabelText=""
+          middlePlaceholderText=""
+          hasLastName=true
+          lastLabelText=""
+          lastPlaceholderText=""
+          hasSuffix=true
+          suffixLabelText=""
+          suffixPlaceholderText=""
+        }}
+        {{> gform-list
+          showError=showError
+          customClass="test-class"
+          hideLabel=false
+          labelText="Label text"
+          required=true
+          descriptionText="Description text"
+          multicolumn=true
+          columnCount=3
+          multicolumnText="Column"
+        }}
+        {{> gform-date
+          showError=showError
+          customClass="test-class"
+          hideLabel=false
+          labelText="Label text"
+          required=true
+          descriptionText="Description text"
+          dateInputType=1
+        }}
+        {{> gform-time
+          showError=showError
+          customClass="test-class"
+          hideLabel=false
+          labelText="Label text"
+          required=true
+          descriptionText="Description text"
+          timeFormat=12
+          HHLabelText=""
+          MMLabelText=""
+        }}
+        {{> gform-product
+          showError=showError
+          customClass="test-class"
+          labelText="Label text"
+          required=true
+          descriptionText="Description text"
+          fieldSize="medium"
+          fieldType=5
+          price=10
+        }}
+        {{> gform-productQuantity
+          showError=showError
+          customClass="test-class"
+          labelText="Label text"
+          required=true
+          placeholderText="placeholder"
+          descriptionText="Description text"
+          fieldSize="medium"
+          fieldType=3
+          min=1
+          max=100
+        }}
+        {{> gform-productOption
+          showError=showError
+          customClass="test-class"
+          labelText="Label text"
+          required=true
+          descriptionText="Description text"
+          fieldType=1
+        }}
+        {{> gform-productShipping
+          showError=showError
+          customClass="test-class"
+          labelText="Label text"
+          required=true
+          descriptionText="Description text"
+          fieldType=1
+        }}
+        {{> gform-productTotal
+          customClass="test-class"
+          labelText="Label text"
+          descriptionText="Description text"
+          total=3
+        }}
+      {{/gform-body}}
+
+      {{> gform-footer
+        type="button"
+        text="Submit"
+        beforeInputText="<p>We respect your privacy and will never share your information with any 3rd parties. You must be 18 years or older to redeem 3 day passes.</p>"
+      }}
+    {{/gform-form}}
+  </div>
+</section>

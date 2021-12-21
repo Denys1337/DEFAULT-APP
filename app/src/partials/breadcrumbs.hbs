@@ -1,0 +1,25 @@
+{{!-- By default, the page title will be taken or you can set the last parameter --}}
+{{!-- Sample {{>breadcrumbs last="Other Title Page"}} --}}
+{{!-- You can specify the page chain in the parents parameter --}}
+{{!-- Sample {{>breadcrumbs parents="parent 1/parent 2/parent 3"}} --}}
+<div class="breadcrumbs">
+  <div class="inner">
+    <span>
+      <a href="#">Home</a> {{!-- the separator can be changed --}}
+      {{#each ( stringToArray parents )}}
+        {{#if this}}
+        <span>
+          <a href="#">{{this}}</a>
+        {{/if}}
+      {{/each}}
+      <span class="breadcrumb_last" aria-current="page">
+        {{#if last}}{{last}}{{else}}{{title}}{{/if}}
+      </span>
+      {{#each ( stringToArray parents )}}
+        {{#if this}}
+        </span>
+        {{/if}}
+      {{/each}}
+    </span>
+  </div>
+</div>

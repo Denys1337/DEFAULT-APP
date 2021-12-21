@@ -1,0 +1,40 @@
+{{! Garvity forms Radio buttons Field component https://docs.gravityforms.com/radio-buttons-field/ https://docs.gravityforms.com/validation-errors/ }}
+
+<li
+        id="field_{{gFormIndex}}_{{gFormFieldIndex true}}"
+        class="gfield {{gformFieldErrorClass showError}} {{gformAddCustomClass customClass}} {{gformRequiredClass
+                required}} field_sublabel_below field_description_below {{gformHideLabel
+                hideLabel}} gfield_visibility_visible"
+> {{! what does this mean -> http://prntscr.com/i3v7gm https://prnt.sc/i2p29u http://prntscr.com/i3w204 http://prntscr.com/i3v3j4 }}
+  <legend class="gfield_label">
+    {{labelText}}{{#with required}}<span class="gfield_required">*</span>{{/with}}
+  </legend>
+  <div class="ginput_container ginput_container_radio">
+    <ul class="gfield_radio">
+      {{> @partial-block }}
+      {{#if enableOtherChoice}} {{! what does it mean --> http://prntscr.com/idq5ry }}
+        <li>
+          <input name='input_{{gFormFieldIndex}}' type='radio' value='gf_other_choice'
+                 onfocus="jQuery(this).next('input').focus();">
+          <input id='input_{{gFormIndex}}_{{gFormFieldIndex}}_other' name='input_{{gFormFieldIndex}}_other'
+                 type='text' value='Other' aria-label='Other'
+                 onfocus='jQuery(this).prev("input")[0].click(); if(jQuery(this).val() === "Other") { jQuery(this).val(""); }'
+                 onblur='if(jQuery(this).val().replace(" ", "") === "") { jQuery(this).val("Other"); }'
+          >
+        </li>
+      {{/if}}
+    </ul>
+  </div>
+  {{#if descriptionText}}
+    <div class="gfield_description">{{descriptionText}}</div>
+  {{/if}}
+  {{#if showError}}
+    <div class="gfield_description validation_message"> {{! what does it mean -> http://prntscr.com/i3y6bc }}
+      {{#if customValidationText}}
+        {{customValidationText}}
+      {{else}}
+        This field is required.
+      {{/if}}
+    </div>
+  {{/if}}
+</li>

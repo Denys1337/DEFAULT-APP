@@ -1,0 +1,31 @@
+---
+title: Blog Archive
+---
+
+<section class="blog-wrapper">
+  <div class="inner">
+    <div class="title">
+      <h1 class="page-title">Blog</h1>
+    </div>
+    <div class="wrap">
+      {{> blog-sidebar}}
+      <div class="content text-content">
+        <div class="main-blog">
+          {{> blog-item image="images/blog-first.jpg" first="true"}}
+          {{> blog-item image="images/blog2.jpg"}}
+          {{> blog-item image="images/blog3.jpg"}}
+          {{> blog-item image="images/blog1.jpg"}}
+          {{> blog-item image="images/blog2.jpg"}}
+          {{> blog-item image="images/blog3.jpg"}}
+          {{> blog-item image="images/blog1.jpg"}}
+          {{> blog-item image="images/blog2.jpg"}}
+          {{> blog-item image="images/blog3.jpg"}}
+          {{> blog-item image="images/blog1.jpg"}}
+        </div>
+        <div class="pagination">
+          {{> pagination}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

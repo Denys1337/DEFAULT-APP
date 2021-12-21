@@ -1,0 +1,68 @@
+@import '../../assets/css/global-mixins.pcss';
+
+$main-color: #f24c4c; /* Links, menu count, checkbox an radio buttons. */
+$invert-color: #fff; /* Text located on the background with the $menu-cart-bg and $main-color. */
+$elements-color: #e0e2ea; /* Various stripes, dots and other minor elements. */
+$title-color: #404554;
+$title-family: Rubik,sans-serif;
+$text-color: #404554;
+$text-family: Rubik,sans-serif;
+$main-bg: #fff;
+$menu-cart-bg: #45599e;
+$thumbnail-size: 100px;
+$main-padding: 20px;
+
+/* Messages. */
+$info-color: $text-color;
+$success-color: green;
+$warning-color: orange;
+$error-color: red;
+
+/* Icons. */
+$trash-icon: svg-load('../images/trash.svg');
+$chek-icon: svg-load('../images/check.svg');
+$cart-icon: svg-load('../images/cart.svg');
+$check-icon: svg-load('../images/check-icon.svg');
+
+/* Breakpoints. */
+@custom-media --woo-1 (width > 568px);
+@custom-media --woo-2 (width > 767px);
+@custom-media --woo-3 (width > 1023px);
+
+/* Global styles */
+.woocommerce-section {
+  color: $text-color;
+  font-family: $text-family;
+
+  h2,
+  h3,
+  th {
+    color: $title-color;
+    font-family: $title-family;
+  }
+
+  a:not(.btn):not(.button) {
+    color: $main-color;
+    font-family: $text-family;
+  }
+
+  .inner {
+    padding-top: $main-padding;
+    padding-bottom: $main-padding;
+
+    @media (--woo-3) {
+      padding-top: calc($main-padding * 2);
+      padding-bottom: calc($main-padding * 2);
+    }
+  }
+
+  .block-for-extend {
+    padding: $main-padding;
+    background-color: $main-bg;
+    box-shadow: 0 3px 5px $elements-color;
+
+    @media (--woo-3) {
+      padding: calc($main-padding * 2);
+    }
+  }
+}

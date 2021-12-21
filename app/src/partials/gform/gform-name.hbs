@@ -1,0 +1,133 @@
+{{! Garvity forms Name Field component https://docs.gravityforms.com/name-fields/ https://docs.gravityforms.com/validation-errors/ }}
+<li
+        id="field_{{gFormIndex}}_{{gFormFieldIndex true}}"
+        class="gfield {{gformFieldErrorClass showError}} {{gformAddCustomClass customClass}} {{gformRequiredClass
+                required}}  field_sublabel_below field_description_below {{gformHideLabel
+                hideLabel}} gfield_visibility_visible"
+>
+  {{! what does this mean -> http://prntscr.com/i3v7gm https://prnt.sc/i2p29u http://prntscr.com/i3w204 http://prntscr.com/i3v3j4 }}
+  <label class="gfield_label">
+    {{labelText}}{{#with required}}<span class="gfield_required">*</span>{{/with}}
+  </label>
+  <div class="ginput_complex ginput_container {{gformName hasPrefix hasFirstName hasMiddleName hasLastName
+                                                          hasSuffix}} ginput_container_name gfield_trigger_change">
+    {{#if hasPrefix}}
+      <span id="input_{{gFormIndex}}_{{gFormFieldIndex}}_2_container" class="name_prefix name_prefix_select">
+				<select name="input_{{gFormFieldIndex}}.2" id="input_{{gFormIndex}}_{{gFormFieldIndex}}_2"
+                aria-label="Name prefix">
+				  <option value="">&nbsp;</option>
+				  <option value="Mr.">Mr.</option>
+				  <option value="Mrs.">Mrs.</option>
+				  <option value="Miss">Miss</option>
+				  <option value="Ms.">Ms.</option>
+				  <option value="Dr.">Dr.</option>
+				  <option value="Prof.">Prof.</option>
+				  <option value="Rev.">Rev.</option>
+				</select>
+				<label for="input_{{gFormIndex}}_{{gFormFieldIndex}}_2">
+          {{#if prefixLabelText}}
+            {{prefixLabelText}}
+          {{else}}
+            Prefix
+          {{/if}}
+        </label>
+     		</span>
+    {{/if}}
+    {{#if hasFirstName}}
+      <span id="input_{{gFormIndex}}_{{gFormFieldIndex}}_3_container" class="name_first">
+				<input
+                type="text"
+                name="input_{{gFormFieldIndex}}.3"
+                id="input_{{gFormIndex}}_{{gFormFieldIndex}}_3"
+                value="" aria-label="First name"
+                aria-required="true"
+                aria-invalid="false"
+                placeholder="{{firstPlaceholderText}}"
+        >
+				<label for="input_{{gFormIndex}}_{{gFormFieldIndex}}_3">
+          {{#if firstLabelText}}
+            {{firstLabelText}}
+          {{else}}
+            First
+          {{/if}}
+        </label>
+      		</span>
+    {{/if}}
+    {{#if hasMiddleName}}
+      <span id="input_{{gFormIndex}}_{{gFormFieldIndex}}_4_container" class="name_middle">
+				<input
+                type="text"
+                name="input_{{gFormFieldIndex}}.4"
+                id="input_{{gFormIndex}}_{{gFormFieldIndex}}_4"
+                value=""
+                aria-label="Middle name"
+                aria-required="true"
+                aria-invalid="false"
+                placeholder="{{middlePlaceholderText}}"
+        >
+				<label for="input_{{gFormIndex}}_{{gFormFieldIndex}}_4">
+          {{#if middleLabelText}}
+            {{middleLabelText}}
+          {{else}}
+            Middle
+          {{/if}}
+        </label>
+			</span>
+    {{/if}}
+    {{#if hasLastName}}
+      <span id="input_{{gFormIndex}}_{{gFormFieldIndex}}_6_container" class="name_last">
+				<input
+                type="text"
+                name="input_{{gFormFieldIndex}}.6"
+                id="input_{{gFormIndex}}_{{gFormFieldIndex}}_6"
+                value=""
+                aria-label="Last name"
+                aria-required="true"
+                aria-invalid="false"
+                placeholder="{{lastPlaceholderText}}"
+        >
+				<label for="input_{{gFormIndex}}_{{gFormFieldIndex}}_6">
+          {{#if lastLabelText}}
+            {{lastLabelText}}
+          {{else}}
+            Last
+          {{/if}}
+        </label>
+      		</span>
+    {{/if}}
+    {{#if hasSuffix}}
+      <span id="input_{{gFormIndex}}_{{gFormFieldIndex}}_{{gFormIndex}}_container" class="name_suffix ">
+        		<input
+                    type="text"
+                    name="input_{{gFormFieldIndex}}.8"
+                    id="input_{{gFormIndex}}_{{gFormFieldIndex}}_8"
+                    value=""
+                    aria-label="Name suffix"
+                    aria-required="true"
+                    aria-invalid="false"
+                    placeholder="{{suffixPlaceholderText}}"
+            >
+				<label for="input_{{gFormIndex}}_{{gFormFieldIndex}}_8">
+          {{#if suffixLabelText}}
+            {{suffixLabelText}}
+          {{else}}
+            Suffix
+          {{/if}}
+        </label>
+      		</span>
+    {{/if}}
+  </div>
+  {{#if descriptionText}}
+    <div class="gfield_description">{{descriptionText}}</div>
+  {{/if}}
+  {{#if showError}}
+    <div class="gfield_description validation_message">
+      {{! what does it mean -> http://prntscr.com/i3y6bc }}
+      {{#if customValidationText}}
+        {{customValidationText}}
+      {{else}}
+        This field is required.
+      {{/if}}
+    </div>
+  {{/if}}
+</li>

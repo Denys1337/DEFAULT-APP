@@ -1,0 +1,27 @@
+{{!-- mobile menu section block --}}
+<aside class="menu-wrap" aria-hidden="true">
+
+  <ul class="second-nav mobile-nav">
+    <li class="phone-link"><a href="tel:#">(123) 456-7890</a></li>
+    <li class="btn-link"><a href="#">Get A Quote</a></li>
+    {{>menu-cart count=0}}
+  </ul>
+
+  <ul class="main-nav mobile-nav">
+    <li class="home-icon"><a href="#">Home</a></li>
+    <li class="menu-item-has-children current-menu-item">
+      <a href="#">About Us</a>
+      <ul class="sub-menu">
+        <li><a href="#">Sub menu item</a></li>
+        <li><a href="#">Sub menu item</a></li>
+        <li><a href="#">Sub menu item</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Technology</a></li>
+    <li><a href="#">Careers</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+  <button class="close-button" id="close-button"><span class="screen-reader-text">Close Menu</span></button>
+</aside>

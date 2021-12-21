@@ -1,0 +1,115 @@
+{{! Garvity forms Price Field component https://docs.gravityforms.com/product-field/ https://docs.gravityforms.com/validation-errors/ }}
+
+<li
+        id="field_{{gFormIndex}}_{{gFormFieldIndex true}}"
+        class="gfield {{gformFieldErrorClass showError}} {{gformAddCustomClass customClass}} {{gformProductHidden
+                fieldType}} {{gformRequiredClass
+                required}} gfield_price gfield_price_{{gFormIndex}}_{{gFormFieldIndex}} gfield_product_{{gFormIndex}}_{{gFormFieldIndex}} field_sublabel_below field_description_below gfield_visibility_visible"
+> {{! what does this mean -> http://prntscr.com/i3v7gm https://prnt.sc/i2p29u http://prntscr.com/i3w204 http://prntscr.com/i3v3j4 }}
+  <label class="gfield_label">
+    {{labelText}}{{#with required}}<span class="gfield_required">*</span>{{/with}}
+  </label>
+  {{#ifequal fieldType 1}} {{! --> http://prntscr.com/if1e1o}}
+    <div class="ginput_container ginput_container_singleproduct">
+      <input type="hidden" name="input_{{gFormFieldIndex}}.1" value="{{labelText}}" class="gform_hidden">
+      <span class="ginput_product_price_label">Price:</span>
+      <span class="ginput_product_price" id="input_{{gFormIndex}}_{{gFormFieldIndex}}">${{price}}</span>
+      <input
+              type="hidden"
+              name="input_{{gFormFieldIndex}}.2"
+              id="ginput_base_price_{{gFormIndex}}_{{gFormFieldIndex}}"
+              class="gform_hidden"
+              value="${{price}}"
+      >
+    </div>
+  {{/ifequal}}
+  {{#ifequal fieldType 2}}
+    <div class="ginput_container ginput_container_select">
+      <select
+              name="input_{{gFormFieldIndex}}"
+              id="input_{{gFormIndex}}_{{gFormFieldIndex}}"
+              class="{{fieldSize}} gfield_select"
+              aria-invalid="false"
+      >
+        <option value="First Choice|10">First Choice</option>
+        <option value="Second Choice|20">Second Choice</option>
+        <option value="Third Choice|30">Third Choice</option>
+      </select>
+    </div>
+  {{/ifequal}}
+  {{#ifequal fieldType 3}}
+    <div class="ginput_container ginput_container_select">
+      <ul class="gfield_radio" id="input_{{gFormIndex}}_{{gFormFieldIndex}}">
+        <li class="gchoice_{{gFormIndex}}_{{gFormFieldIndex}}_0">
+          <input
+                  name="input_{{gFormFieldIndex}}"
+                  type="radio"
+                  value="First Choice|10"
+                  id="choice_{{gFormIndex}}_{{gFormFieldIndex}}_0"
+          >
+          <label for="choice_{{gFormIndex}}_{{gFormFieldIndex}}_0"
+                 id="label_{{gFormIndex}}_{{gFormFieldIndex}}_0">First Choice</label>
+        </li>
+        <li class="gchoice_{{gFormIndex}}_{{gFormFieldIndex}}_1">
+          <input
+                  name="input_{{gFormFieldIndex}}"
+                  type="radio"
+                  value="Second Choice|20"
+                  id="choice_{{gFormIndex}}_{{gFormFieldIndex}}_1"
+          >
+          <label for="choice_{{gFormIndex}}_{{gFormFieldIndex}}_1"
+                 id="label_{{gFormIndex}}_{{gFormFieldIndex}}_1">Second Choice</label>
+        </li>
+        <li class="gchoice_{{gFormIndex}}_{{gFormFieldIndex}}_2">
+          <input
+                  name="input_{{gFormFieldIndex}}"
+                  type="radio"
+                  value="Third Choice|30"
+                  id="choice_{{gFormIndex}}_{{gFormFieldIndex}}_2"
+          >
+          <label for="choice_{{gFormIndex}}_{{gFormFieldIndex}}_2"
+                 id="label_{{gFormIndex}}_{{gFormFieldIndex}}_2">Third Choice</label>
+        </li>
+      </ul>
+    </div>
+  {{/ifequal}}
+  {{#ifequal fieldType 4}}
+    <div class="ginput_container ginput_container_product_price">
+      <input
+              name="input_{{gFormFieldIndex}}"
+              id="input_{{gFormIndex}}_{{gFormFieldIndex}}"
+              type="text"
+              value=""
+              class="medium ginput_amount"
+              aria-invalid="false"
+      >
+    </div>
+  {{/ifequal}}
+  {{#ifequal fieldType 5}}
+    <input
+            type="hidden"
+            name="input_{{gFormFieldIndex}}.1"
+            value="{{labelText}}"
+            class="gform_hidden"
+    >
+    <input
+            name="input_{{gFormFieldIndex}}.2"
+            id="ginput_base_price_{{gFormIndex}}_{{gFormFieldIndex}}"
+            type="hidden"
+            value="${{price}}"
+            class="gform_hidden ginput_amount"
+    >
+  {{/ifequal}}
+  {{#if descriptionText}}
+    <div class="gfield_description">{{descriptionText}}</div>
+  {{/if}}
+  {{#if showError}}
+    <div class="gfield_description validation_message"> {{! what does it mean -> http://prntscr.com/i3y6bc }}
+      {{#if customValidationText}}
+        {{customValidationText}}
+      {{else}}
+        This field is required.
+      {{/if}}
+    </div>
+  {{/if}}
+</li>

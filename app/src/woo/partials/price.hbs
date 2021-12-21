@@ -1,0 +1,11 @@
+{{#if from}}
+  <span class="woocommerce-Price-amount amount"><bdi>{{priceFormat from currency}}</bdi></span> –
+  <span class="woocommerce-Price-amount amount"><bdi>{{priceFormat to currency}}</bdi></span>
+{{else}}
+  {{#if sale}}
+    <del><span class="woocommerce-Price-amount amount"><bdi>{{priceFormat price currency}}</bdi></span></del>
+    <ins><span class="woocommerce-Price-amount amount"><bdi>{{priceFormat sale currency}}</bdi></span></ins>
+  {{else}}
+    <span class="woocommerce-Price-amount amount"><bdi>{{priceFormat price currency}}</bdi></span>
+  {{/if}}
+{{/if}}

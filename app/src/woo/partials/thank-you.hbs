@@ -1,0 +1,60 @@
+<div class="woocommerce-section checkout-section">
+  <div class="inner">
+    <div class="woocommerce">
+      <div class="woocommerce-order">
+        <div class="content">
+          {{#ifequal status 'success' }}
+            <span class="icon"></span>
+            <h2 class="title">Thank you!</h2>
+            <p class="woocommerce-thankyou-order-received">Your order was completed successfully!</p>
+            <p class="woocommerce-order-overview__order order">Order #1234567890</p>
+            <p>An email receipt, including the details about your order, has been sent to the email address provided.
+              Please keep it for your records.</p>
+            <section class="woocommerce-order-downloads">
+              <h2 class="woocommerce-order-downloads__title">Downloads</h2>
+              <table
+                  class="woocommerce-table woocommerce-table--order-downloads shop_table shop_table_responsive order_details">
+                <thead>
+                <tr>
+                  <th class="download-product">
+                    <span class="nobr">Product</span>
+                  </th>
+                  <th class="download-file">
+                    <span class="nobr">Download</span>
+                  </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td class="download-product" data-title="Product">
+                    <a href="#">File name</a>
+                  </td>
+                  <td class="download-file" data-title="Download">
+                    <a href="#" class="woocommerce-MyAccount-downloads-file button alt btn">Download</a>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </section>
+            {{>social-links title='Follow us'}}
+          {{/ifequal}}
+          {{#ifequal status 'failed' }}
+            <h2 class="title">Unfortunately.</h2>
+            <p class="woocommerce-thankyou-order-failed">Your order cannot be processed as the originating bank/merchant
+              has declined your transaction. Please attempt your purchase again.</p>
+            <p class="woocommerce-thankyou-order-failed-actions">
+              <a href="#" class="button pay">Pay</a>
+              <a href="#" class="button pay">My account</a>
+            </p>
+          {{/ifequal}}
+        </div>
+        {{#if bg}}
+          <div class="background">
+            <img width="600" height="600" src="https://picsum.photos/600/600" class="object-fit object-fit-cover"
+                 alt="">
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>

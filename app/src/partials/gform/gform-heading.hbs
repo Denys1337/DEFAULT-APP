@@ -1,0 +1,12 @@
+{{! Garvity forms heading component https://docs.gravityforms.com/form-heading/ }}
+
+<div class="gform_heading">
+  <h3 class="gform_title">{{title}}</h3>
+  <span class="gform_description">{{description}}</span>
+</div>
+
+<script>
+  var description = jQuery('.gform_heading span.gform_description').text();
+  jQuery('.gform_heading span.gform_description').html('');
+  jQuery('.gform_heading span.gform_description').append(description);
+</script>

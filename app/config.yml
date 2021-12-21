@@ -1,0 +1,18 @@
+# Your project's server will run on localhost:xxxx at this port
+PORT: 8000
+
+# Gulp will reference these paths when it copies files
+PATHS:
+  # Path to dist folder
+  dist: "dist"
+  markupDist: "../www"
+  validate: "dist/**/*.html"
+  # Paths to static assets that aren't images, CSS, or JavaScript
+  assets:
+    - "app/assets/**/*"
+    - "!app/assets/{img,js,css}/**/*"
+  # Paths to JavaScript entry points for webpack to bundle modules
+  entries:
+    - "src/assets/js/init.js"
+  # WordPress
+  wp: "../wp-content/themes/pathname-change-in-config-yml"

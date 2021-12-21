@@ -1,0 +1,158 @@
+<!--suppress HtmlFormInputWithoutLabel, HtmlDeprecatedAttribute -->
+<div class="woocommerce-section cart-section">
+  <div class="inner">
+    <div class="woocommerce">
+      {{#if count}}
+        <div class="woocommerce-notices-wrapper">
+          <div class="woocommerce-message" role="alert">
+            “70% Isopropyl Alcohol (IPA)” removed.
+            <a href="#" class="restore-item">Undo?</a>
+          </div>
+        </div>
+        <form class="woocommerce-cart-form" action="#" method="post">
+          <h2>My Cart</h2>
+          <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+            <thead>
+            <tr>
+              <th class="product-remove">&nbsp;</th>
+              <th class="product-thumbnail">&nbsp;</th>
+              <th class="product-name">Product</th>
+              <th class="product-price">Price</th>
+              <th class="product-quantity">Quantity</th>
+              <th class="product-subtotal">Subtotal</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{>cart-item image="https://via.placeholder.com/100x100" index=1}}
+            {{>cart-item image="https://via.placeholder.com/100x80" index=2}}
+            {{>cart-item image="https://via.placeholder.com/100x100" index=3}}
+            {{>cart-item image="https://via.placeholder.com/80x100" index=4}}
+            {{>cart-item image="https://via.placeholder.com/100x100" index=5}}
+            <tr>
+              <td colspan="6" class="actions">
+                <div class="coupon">
+                  <label for="coupon_code">Coupon:</label>
+                  <input type="text" name="coupon_code" class="input-text" id="coupon_code" value=""
+                         placeholder="Coupon code"/>
+                  <button type="submit" class="button" name="apply_coupon" value="Apply coupon">Apply coupon</button>
+                </div>
+                <button type="submit" class="button" name="update_cart" value="Update cart">Update cart</button>
+                <input type="hidden" id="woocommerce-cart-nonce" name="woocommerce-cart-nonce" value=""/>
+                <input type="hidden" name="_wp_http_referer" value=""/>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </form>
+        <div class="cart-collaterals">
+          <div class="cart_totals ">
+            <h2>Cart totals</h2>
+            <table cellspacing="0" class="shop_table shop_table_responsive">
+              <tr class="cart-subtotal">
+                <th>Subtotal</th>
+                <td data-title="Subtotal">
+                  {{>price price=15.00}}
+                </td>
+              </tr>
+              <tr class="woocommerce-shipping-totals shipping">
+                <th>Shipping</th>
+                <td data-title="Shipping">
+                  <ul id="shipping_method" class="woocommerce-shipping-methods">
+                    <li>
+                      <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_flat_rate1"
+                             value="flat_rate:1" class="shipping_method" checked='checked'/>
+                      <label for="shipping_method_0_flat_rate1">Flat rate: {{>price price=99.55}}</label>
+                    </li>
+                    <li>
+                      <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_local_pickup2"
+                             value="local_pickup:2" class="shipping_method"/>
+                      <label for="shipping_method_0_local_pickup2">Local pickup: {{>price price=16.99}}</label>
+                    </li>
+                    <li>
+                      <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_free_shipping3"
+                             value="free_shipping:3" class="shipping_method"/>
+                      <label for="shipping_method_0_free_shipping3">Free shipping</label>
+                    </li>
+                  </ul>
+                  <p class="woocommerce-shipping-destination">
+                    Shipping to <strong>2118 Abrams Rd, Washington, TX 03280</strong>.
+                  </p>
+                  <form class="woocommerce-shipping-calculator" action="#" method="post">
+                    <a href="#" class="shipping-calculator-button">Change address</a>
+                    <section class="shipping-calculator-form" style="display: none;">
+                      <p class="form-row form-row-wide" id="calc_shipping_country_field">
+                        <select name="calc_shipping_country" id="calc_shipping_country"
+                                class="country_to_state country_select" rel="calc_shipping_state">
+                          {{>country-options}}
+                        </select>
+                      </p>
+                      <p class="form-row form-row-wide" id="calc_shipping_state_field">
+                        <span>
+                          <select name="calc_shipping_state" class="state_select" id="calc_shipping_state"
+                                  data-placeholder="State / County">
+                            {{>states-options}}
+                          </select>
+                        </span>
+                      </p>
+                      <p class="form-row form-row-wide" id="calc_shipping_city_field">
+                        <input type="text" class="input-text" value="" placeholder="City" name="calc_shipping_city"
+                               id="calc_shipping_city"/>
+                      </p>
+                      <p class="form-row form-row-wide" id="calc_shipping_postcode_field">
+                        <input type="text" class="input-text" value="" placeholder="Postcode / ZIP"
+                               name="calc_shipping_postcode" id="calc_shipping_postcode"/>
+                      </p>
+                      <p class="form-row form-row-wide" id="calc_shipping_address_1_field">
+                        <input type="text" class="input-text " value="" placeholder="House number and street name"
+                               name="calc_shipping_address_1" id="calc_shipping_address_1">
+                      </p>
+                      <p>
+                        <button type="submit" name="calc_shipping" value="1" class="button">Update</button>
+                      </p>
+                      <input type="hidden" id="woocommerce-shipping-calculator-nonce"
+                             name="woocommerce-shipping-calculator-nonce" value=""/>
+                      <input type="hidden" name="_wp_http_referer" value=""/>
+                    </section>
+                  </form>
+                </td>
+              </tr>
+              <tr class="tax-rate tax-rate-tax-1">
+                <th>Tax</th>
+                <td data-title="Tax">{{>price price=9.45}}</td>
+              </tr>
+              <tr class="order-total">
+                <th>Total</th>
+                <td data-title="Total"><strong>{{>price price=124.00}}</strong></td>
+              </tr>
+            </table>
+            <div class="wc-proceed-to-checkout">
+              <a href="#" class="checkout-button button alt wc-forward">Proceed to checkout</a>
+            </div>
+            <h3>We Accept</h3>
+            <div class="icons">
+              <img src="{{root}}images/woo/visa.svg" alt="Visa">
+              <img src="{{root}}images/woo/amex.svg" alt="American Express">
+              <img src="{{root}}images/woo/mastercard.svg" alt="Mastercard">
+            </div>
+          </div>
+        </div>
+      {{else}}
+        <div class="woocommerce-notices-wrapper"></div>
+        <p class="cart-empty woocommerce-info">Your cart is currently empty.</p>
+        <p class="return-to-shop"><a class="button wc-backward" href="#">Return to shop </a></p>
+      {{/if}}
+    </div>
+  </div>
+</div>
+<script>
+  if ( typeof window.initShippingCalculator === 'undefined' ) {
+    window.initShippingCalculator = true;
+    document.addEventListener( 'click', function( e ) {
+      if ( e.target && e.target.classList.contains( 'shipping-calculator-button' ) ) {
+        e.preventDefault();
+        console.info( e.target.nextElementSibling );
+        e.target.nextElementSibling.style.display = e.target.nextElementSibling.style.display === 'none' ? '' : 'none';
+      }
+    } );
+  }
+</script>

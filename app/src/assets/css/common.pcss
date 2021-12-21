@@ -1,0 +1,505 @@
+@import 'global-mixins.pcss';
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; /* 1 */
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  clip-path: none;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* ==========================================================================
+   Common styles
+   ========================================================================== */
+
+body {
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  font-family: 'Raleway' sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #f00;
+  font-weight: 600;
+
+  &:--enter {
+    text-decoration: underline;
+  }
+}
+
+p {
+  margin-top: 0;
+  color: #383838;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  margin-bottom: 26px;
+}
+
+section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.inner {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1250px;
+  position: relative;
+
+  @media (max-width: 1300px) {
+    padding: 0 15px;
+  }
+}
+
+.inner-narrow {
+  max-width: 858px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.btn {
+  border-radius: 4px;
+  background-color: #f24c4c;
+  display: inline-block;
+  text-align: center;
+  padding: 12.5px 26px;
+  vertical-align: middle;
+  transition: background-color 0.2s;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  min-width: 170px;
+  line-height: 1.15;
+  border: none;
+  outline: none;
+}
+
+.btn:--enter {
+  background-color: #cf4444;
+  text-decoration: none;
+}
+
+.content-wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.main {
+  position: relative;
+  flex-grow: 1;
+  z-index: 1;
+  background-color: #fff;
+}
+
+.text-content {
+  li {
+    color: #383838;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 15px;
+  }
+
+  ol {
+    padding-left: 15px;
+
+    li {
+      padding-left: 16px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      position: relative;
+      padding-left: 31px;
+
+      &::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #3b91c2;
+        position: absolute;
+        top: 9px;
+        left: 0;
+      }
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    max-width: 100%;
+    overflow-x: auto;
+    display: block;
+    color: #5e5e5e;
+
+    td,
+    th {
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+    }
+  }
+
+  blockquote {
+    font-style: italic;
+  }
+}
+
+.alignleft {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.alignright {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+div.pagination {
+  overflow-x: auto;
+
+  .title {
+    display: none;
+  }
+
+  ol.wp-paginate,
+  .page-numbers {
+    margin: 20px 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    list-style: none;
+
+    a,
+    .gap,
+    .dots {
+      color: #888;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 38px;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      background-color: transparent;
+      border: 1px solid #b5bdd3;
+    }
+
+    .gap,
+    .dots {
+      font-size: 24px;
+      letter-spacing: -1.3px;
+      padding-bottom: 14px;
+      line-height: normal;
+      height: 40px;
+    }
+
+    a:--enter {
+      border-color: #244faa;
+      color: #244faa;
+    }
+
+    .current {
+      padding: 0;
+      margin: 0;
+      line-height: 38px;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #b5bdd3;
+      border: 1px solid #b5bdd3;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    li {
+      line-height: 34px;
+      margin-right: 5px;
+      padding-left: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .next,
+    .prev {
+      font-size: 0;
+      background: svg-load("../images/arrow1.svg") center no-repeat;
+    }
+
+    .prev {
+      transform: rotate(180deg);
+    }
+  }
+
+  .page-numbers {
+    margin-left: 5px;
+  }
+}
+
+@media (--sm6) {
+  .alignright {
+    margin-left: 1.5em;
+    display: inline;
+    float: right;
+  }
+
+  .alignleft {
+    margin-right: 1.5em;
+    display: inline;
+    float: left;
+  }
+}
+
+.object-fit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-position: center top;
+
+  & ~ * {
+    position: relative;
+  }
+
+  &-cover {
+    object-fit: cover;
+    height: 100%;
+  }
+
+  &-contain {
+    object-fit: contain;
+    height: auto;
+  }
+}
+
+.breadcrumbs {
+  padding: 8px 0;
+  position: relative;
+  height: 30px;
+
+  .inner {
+    position: relative;
+
+    > span {
+      position: absolute;
+      top: 0;
+      z-index: 3;
+    }
+  }
+
+  span,
+  a {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 14px;
+    color: #6d6d6d;
+  }
+
+  a {
+    position: relative;
+    padding-right: 10px;
+
+    &::before {
+      position: absolute;
+      content: ">";
+      top: 3px;
+      right: 0;
+    }
+  }
+
+  .breadcrumb_last {
+    color: #000;
+  }
+}

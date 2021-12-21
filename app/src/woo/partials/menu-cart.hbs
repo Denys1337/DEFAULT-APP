@@ -1,0 +1,22 @@
+<li class="cart menu-item">
+  <a href="#">
+    {{#if linkText}}{{linkText}}{{else}}Cart{{/if}}
+    {{#ifequal total ''}}{{else}} <span class="cart-total">{{>price price=total currency=currency}}</span>{{/ifequal}}
+    {{#ifequal count ''}}{{else}} <span class="cart-count">{{count}}</span>{{/ifequal}}
+  </a>
+  <div class="menu-cart">
+    <div class="title">
+      <h2>Cart{{#ifequal count ''}}{{else}}<span>{{count}} items</span>{{/ifequal}}</h2>
+      <a href="#" class="close" data-close>
+        <span class="screen-reader-text">Close cart</span>
+      </a>
+    </div>
+    {{#if count}}
+      {{>mini-cart}}
+    {{else}}
+      <div class="empty">
+        Empty Cart
+      </div>
+    {{/if}}
+  </div>
+</li>

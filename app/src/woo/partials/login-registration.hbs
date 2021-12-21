@@ -1,0 +1,136 @@
+<div class="woocommerce-section login-section">
+  <div class="inner">
+    <div class="woocommerce">
+      <div class="guest-checkout">
+        <h2>Guest Checkout</h2>
+        <p>You can check out without creating an account. You will have a chance to create an account later.</p>
+        <a class="btn" href="#">Checkout as Guest</a>
+      </div>
+      <div class="woocommerce-notices-wrapper">
+        <ul class="woocommerce-error">
+          <li>Unknown username. Check again or try your email address.</li>
+        </ul>
+      </div>
+      <div class="section-auth">
+        <ul class="tabs-nav">
+          <li>Sign In</li>
+          <li data-hash="#registration">Create an Account</li>
+        </ul>
+        <div class="tabs">
+          <div class="tab">
+            <form class="woocommerce-form woocommerce-form-login login" method="post">
+              <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                <label for="username">
+                  Email address&nbsp;<abbr class="required" title="required">*</abbr>
+                </label>
+                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username"
+                       id="username" autocomplete="username" value="">
+              </p>
+              <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                <label for="password">
+                  Password&nbsp;<abbr class="required" title="required">*</abbr>
+                </label>
+                <span class="password-input">
+                  <input class="woocommerce-Input woocommerce-Input--text input-text"
+                         type="password" name="password" id="password" autocomplete="current-password">
+                  <span class="show-password-input"></span>
+                </span>
+              </p>
+              <p class="form-row form-row-rememberme">
+                <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme"
+                       type="checkbox" id="rememberme" value="forever">
+                <label for="rememberme"
+                       class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
+                  <span>Remember me</span>
+                </label>
+                <a href="#" class="woocommerce-LostPassword lost_password">Forgot Password?</a>
+              </p>
+              <p>
+                <button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login"
+                        value="Sign In">Sign In
+                </button>
+              </p>
+            </form>
+          </div>
+          <div class="tab" style="display: none;">
+            <form method="post" class="woocommerce-form woocommerce-form-register register">
+              <p class="form-row form-row-wide validate-required" id="first_name_field" data-priority="">
+                <label for="first_name" class="">
+                  First name&nbsp;<abbr class="required" title="required">*</abbr>
+                </label>
+                <span class="woocommerce-input-wrapper">
+                  <input type="text" class="input-text " name="first_name" id="first_name" placeholder=""
+                         value="Jackson" autocomplete="given-name">
+                </span>
+              </p>
+              <p class="form-row form-row-wide validate-required" id="last_name_field" data-priority="">
+                <label for="last_name" class="">
+                  Last name&nbsp;<abbr class="required" title="required">*</abbr>
+                </label>
+                <span class="woocommerce-input-wrapper">
+                  <input type="text" class="input-text" name="last_name" id="last_name" placeholder="" value=""
+                         autocomplete="family-name">
+                </span>
+              </p>
+              <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide woocommerce-invalid">
+                <label for="reg_email">
+                  Email&nbsp;<abbr class="required" title="required">*</abbr>
+                </label>
+                <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email"
+                       id="reg_email" autocomplete="email" value="">
+                <span class="error">Email is not a valid email address.</span>
+              </p>
+              <p class="form-row form-row-wide password-field validate-required" id="email_confirm_field"
+                 data-priority="">
+                <label for="email_confirm" class="">
+                  Confirm email&nbsp;<abbr class="required" title="required">*</abbr>
+                </label>
+                <span class="woocommerce-input-wrapper">
+                  <input type="email" class="input-text " name="email_confirm" id="email_confirm" placeholder=""
+                         value="" autocomplete="email">
+                </span>
+              </p>
+              <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                <label for="reg_password">
+                  Password&nbsp;<abbr class="required" title="required">*</abbr>
+                </label>
+                <span class="password-input">
+                  <input type="password" class="woocommerce-Input woocommerce-Input--text input-text"
+                         name="password" id="reg_password" autocomplete="new-password" value="Aqsqw#">
+                  <span class="woocommerce-password-strength bad" aria-live="polite">Weak - Please enter a stronger password.</span>
+                  <small class="woocommerce-password-hint">
+                    Hint: The password should be at least twelve characters long.
+                    To make it stronger, use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ &amp; ).
+                  </small>
+                 <span class="show-password-input"></span>
+                </span>
+              </p>
+              <p class="form-row form-row-wide password-field validate-required" id="password_confirm_field"
+                 data-priority="">
+                <label for="password_confirm" class="">
+                  Confirm password&nbsp;<abbr class="required" title="required">*</abbr>
+                </label>
+                <span class="woocommerce-input-wrapper password-input">
+                  <input type="password" class="input-text " name="password_confirm" id="password_confirm"
+                         placeholder="" value="" autocomplete="new-password">
+                  <span class="show-password-input"></span>
+                </span>
+              </p>
+              <p class="woocommerce-form-row form-row">
+                <button type="submit"
+                        class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit"
+                        name="register" value="Log In">Log In
+                </button>
+              </p>
+              <p>
+                Your personal data will be used to support your experience throughout this website, to manage access to
+                your account, and for other purposes described in our
+                <a href="#" class="woocommerce-privacy-policy-link" target="_blank">Privacy</a>.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

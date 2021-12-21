@@ -1,0 +1,33 @@
+<tr class="woocommerce-cart-form__cart-item cart_item">
+  <td class="product-remove">
+    <a href="#" class="remove" aria-label="Remove this item" data-product_id="77" data-product_sku="">&times;</a>
+  </td>
+  <td class="product-thumbnail">
+    <a href="#">
+      <img src="{{image}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt=""/>
+    </a>
+  </td>
+  <td class="product-name" data-title="Product"><a href="#">70% Isopropyl Alcohol (IPA) - 330 gal Tote</a></td>
+  <td class="product-price" data-title="Price">{{>price price=15}}</td>
+  <td class="product-quantity" data-title="Quantity">
+    <div class="quantity">
+      <label class="" for="quantity_{{index}}">Qty</label>
+      <input
+          type="number"
+          id="quantity_{{index}}"
+          class="input-text qty text"
+          step="1"
+          min="0"
+          max=""
+          name="cart[{{index}}][qty]"
+          value="1"
+          title="Qty"
+          size="4"
+          placeholder=""
+          inputmode="numeric"/>
+      <button type="button" class="qty-btn minus" title="Minus Quantity">-</button>
+      <button type="button" class="qty-btn plus" title="Plus Quantity">+</button>
+    </div>
+  </td>
+  <td class="product-subtotal" data-title="Subtotal">{{>price price=15}}</td>
+</tr>

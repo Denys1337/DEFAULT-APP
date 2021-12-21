@@ -1,0 +1,12 @@
+{{!-- Garvity forms body component https://docs.gravityforms.com/form-body/ --}}
+
+{{#if showError}}
+  <div class="validation_error">There was a problem with your submission. Errors have been highlighted below.</div>
+{{! https://docs.gravityforms.com/validation-errors/#validation-error-message }}
+{{/if}}
+<div class="gform_body">
+  <ul class="gform_fields top_label form_sublabel_below description_below">
+    {{!-- additional 3 classes -> http://prntscr.com/i1qyel --}}
+    {{> @partial-block }}
+  </ul>
+</div>

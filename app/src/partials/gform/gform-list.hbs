@@ -1,0 +1,107 @@
+{{! Garvity forms List Field component https://docs.gravityforms.com/list-field/ https://docs.gravityforms.com/validation-errors/ }}
+
+<li
+        id="field_{{gFormIndex}}_{{gFormFieldIndex true}}"
+        class="gfield {{gformFieldErrorClass showError}} {{gformAddCustomClass customClass}} {{gformRequiredClass
+                required}}  field_sublabel_below field_description_below {{gformHideLabel
+                hideLabel}} gfield_visibility_visible"
+> {{! what does this mean -> http://prntscr.com/i3v7gm https://prnt.sc/i2p29u http://prntscr.com/i3w204 http://prntscr.com/i3v3j4 }}
+  <label class="gfield_label">
+    {{labelText}}{{#with required}}<span class="gfield_required">*</span>{{/with}}
+  </label>
+  <div class="ginput_container ginput_container_list ginput_list">
+    <input type='text' id='input_{{gFormIndex}}_{{gFormFieldIndex}}_shim' style='position:absolute;left:-999em;'
+           onfocus='jQuery( "#field_{{gFormIndex}}_{{gFormFieldIndex}} table tr td:first-child input" ).focus();'>
+    {{#if multicolumn}} {{! --> http://prntscr.com/iejjm3}}
+      <table class="gfield_list gfield_list_container">
+        <colgroup>
+          {{#repeat columnCount}}
+            <col id="gfield_list_{{gFormFieldIndex}}_col_{{@index}}" class="gfield_list_col_odd">
+          {{/repeat}}
+          <col id="gfield_list_{{gFormFieldIndex}}_col_4">
+        </colgroup>
+        <thead>
+        <tr>
+          {{#repeat columnCount}}
+            {{#if multicolumnText}}
+              <th>{{multicolumnText}}</th>
+            {{else}}
+              <th>Column {{@index}}</th>
+            {{/if}}
+          {{/repeat}}
+          <th>&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="gfield_list_row_odd gfield_list_group">
+          {{#repeat columnCount}}
+            <td class="gfield_list_cell gfield_list_{{gFormFieldIndex}}_cell{{@index}}"
+                data-label="Column {{@index}}">
+              <input type="text" name="input_{{gFormFieldIndex}}[]" value="">
+            </td>
+          {{/repeat}}
+          <td class="gfield_list_icons">
+            <img
+                    src="http://nwbp.devbucket.me/wp-content/plugins/gravityforms/images/list-add.svg"
+                    class="add_list_item "
+                    title="Add another row"
+                    alt="Add a new row"
+                    onclick="gformAddListItem(this, 0)"
+                    onkeypress="gformAddListItem(this, 0)"
+                    style="cursor:pointer;">
+            <img src="http://nwbp.devbucket.me/wp-content/plugins/gravityforms/images/list-remove.svg"
+                 class="delete_list_item"
+                 title="Remove this row"
+                 alt="Remove this row"
+                 onclick="gformDeleteListItem(this, 0)"
+                 onkeypress="gformDeleteListItem(this, 0)"
+                 style="cursor:pointer; visibility:hidden;">
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    {{else}}
+      <table class="gfield_list gfield_list_container">
+        <colgroup>
+          <col id="gfield_list_{{gFormFieldIndex}}_col1" class="gfield_list_col_odd">
+          <col id="gfield_list_{{gFormFieldIndex}}_col2" class="gfield_list_col_even">
+        </colgroup>
+        <tbody>
+        <tr class="gfield_list_row_odd gfield_list_group">
+          <td class="gfield_list_cell gfield_list_{{gFormFieldIndex}}_cell1">
+            <input type="text" name="input_{{gFormFieldIndex}}[]" value="">
+          </td>
+          <td class="gfield_list_icons">
+            <img
+                    src="http://nwbp.devbucket.me/wp-content/plugins/gravityforms/images/list-add.svg"
+                    class="add_list_item " title="Add another row"
+                    alt="Add a new row"
+                    onclick="gformAddListItem(this, 0)"
+                    onkeypress="gformAddListItem(this, 0)"
+                    style="cursor:pointer;">
+            <img
+                    src="http://nwbp.devbucket.me/wp-content/plugins/gravityforms/images/list-remove.svg"
+                    class="delete_list_item" title="Remove this row"
+                    alt="Remove this row"
+                    onclick="gformDeleteListItem(this, 0)"
+                    onkeypress="gformDeleteListItem(this, 0)"
+                    style="cursor:pointer; visibility:hidden;">
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    {{/if}}
+  </div>
+  {{#if descriptionText}}
+    <div class="gfield_description">{{descriptionText}}</div>
+  {{/if}}
+  {{#if showError}}
+    <div class="gfield_description validation_message"> {{! what does it mean -> http://prntscr.com/i3y6bc }}
+      {{#if customValidationText}}
+        {{customValidationText}}
+      {{else}}
+        This field is required.
+      {{/if}}
+    </div>
+  {{/if}}
+</li>

@@ -1,0 +1,17 @@
+{{! Garvity forms base component https://docs.gravityforms.com/form-wrapper/ }}
+
+{{#if showConfirmation}}
+  {{> gform-confirmation
+          confirmationText=confirmationText
+          customClass=customClass
+  }}
+{{else}}
+  <div class="gf_browser_chrome gform_wrapper {{gformCustomWrapperClass customClass}}"
+       id="gform_wrapper_{{gFormIndex true}}">  {{! customClass -> http://prntscr.com/i2q6yw}}
+    <form method="post" enctype="multipart/form-data" id="gform_{{gFormIndex}}"
+          class="{{gformAddCustomClass customClass}}"
+          action="/">
+      {{> @partial-block }}
+    </form>
+  </div>
+{{/if}}

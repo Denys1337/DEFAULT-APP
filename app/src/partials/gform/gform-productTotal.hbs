@@ -1,0 +1,22 @@
+{{! Garvity forms total Field component https://docs.gravityforms.com/total-field/ https://docs.gravityforms.com/validation-errors/ }}
+
+<li
+        id="field_{{gFormIndex}}_{{gFormFieldIndex true}}"
+        class="gfield {{gformAddCustomClass
+                customClass}} gfield_price gfield_price_{{gFormIndex}}_{{gFormFieldIndex
+                true}} gfield_total gfield_total_{{gFormIndex}}_{{gFormFieldIndex}} field_sublabel_below field_description_below gfield_visibility_visible"
+> {{! what does this mean -> http://prntscr.com/i3v7gm https://prnt.sc/i2p29u http://prntscr.com/i3w204 http://prntscr.com/i3v3j4 }}
+  <label class="gfield_label">{{labelText}}</label>
+  <div class="ginput_container ginput_container_total">
+    <span class="ginput_total ginput_total_{{gFormFieldIndex}}">${{toral}}.00</span>
+    <input
+            type="hidden"
+            name="input_{{gFormFieldIndex}}"
+            id="input_{{gFormIndex}}_{{gFormFieldIndex}}"
+            class="gform_hidden"
+    >
+  </div>
+  {{#if descriptionText}}
+    <div class="gfield_description">{{descriptionText}}</div>
+  {{/if}}
+</li>

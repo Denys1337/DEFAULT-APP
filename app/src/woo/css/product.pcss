@@ -1,0 +1,42 @@
+.cart {
+  .button {
+    &.loading,
+    &.added {
+      position: relative;
+
+      &::after {
+        font-family: WooCommerce, serif;
+        font-weight: bold;
+        position: absolute;
+        right: -1.5em;
+      }
+    }
+
+    &.loading {
+      opacity: 0.25;
+
+      &::after {
+        content: "\e01c";
+        animation: addToCartSpin 2s linear infinite;
+        color: $main-color;
+      }
+    }
+
+    &.added {
+      &::after {
+        content: "\e017";
+        color: $success-color;
+      }
+    }
+  }
+
+  .added_to_cart {
+    @extend visuallyhidden;
+  }
+}
+
+@keyframes addToCartSpin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

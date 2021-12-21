@@ -1,0 +1,102 @@
+.cart-section {
+  h2 {
+    text-transform: uppercase;
+    padding-bottom: 35px;
+    margin-bottom: 25px;
+    line-height: 1;
+    border-bottom: 1px solid $elements-color;
+  }
+
+  .woocommerce {
+    @media (--woo-2) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+
+      > p {
+        flex: 100%;
+      }
+    }
+  }
+
+  .woocommerce-cart-form {
+    @extend .woocommerce-section .block-for-extend;
+
+    .actions {
+      width: 100%;
+
+      label {
+        @extend visuallyhidden;
+      }
+
+      > [type="submit"] {
+        display: none;
+      }
+    }
+
+    @media (--woo-2) {
+      flex: 0 0 calc(65% - $main-padding);
+      margin-right: $main-padding;
+
+      .coupon {
+        display: flex;
+
+        .input-text {
+          margin-right: 8px;
+        }
+
+        .button {
+          margin-left: 8px;
+        }
+      }
+    }
+
+    @media (--woo-3) {
+      flex: 0 0 calc(65% - $main-padding * 2);
+      margin-right: calc($main-padding * 2);
+    }
+  }
+
+  .cart-collaterals {
+    @extend .woocommerce-section .block-for-extend;
+
+    th,
+    td {
+      margin-bottom: 10px;
+    }
+
+    .shipping {
+      flex-direction: column;
+
+      td {
+        text-align: left;
+      }
+    }
+
+    h3 {
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    p:not(.form-row),
+    section,
+    .shipping-calculator-button {
+      display: block;
+      margin: 0 0 10px;
+      padding: 0;
+    }
+
+    .icons {
+      img {
+        height: 24px;
+        margin-right: 10px;
+      }
+    }
+
+    @media (--woo-2) {
+      flex: 0 0 35%;
+      position: sticky;
+      top: 100px;
+    }
+  }
+}

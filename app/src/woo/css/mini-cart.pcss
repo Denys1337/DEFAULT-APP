@@ -1,0 +1,112 @@
+$padding: 10px;
+
+.woocommerce-mini-cart {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: $text-color;
+  font-family: $text-family;
+  position: relative;
+  display: block;
+
+  .woocommerce-mini-cart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    text-align: left;
+    margin-bottom: $padding;
+    padding-bottom: $padding;
+    padding-left: calc($thumbnail-size + $padding);
+    min-height: calc($thumbnail-size + $padding);
+    border-bottom: 1px solid $elements-color;
+    width: 100%;
+
+    .price {
+      order: 1;
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    a:not(.remove) {
+      order: 2;
+      display: block;
+      margin-bottom: 20px;
+      color: $text-color;
+      font-size: 16px;
+
+      img {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        max-width: $thumbnail-size;
+        max-height: $thumbnail-size;
+        left: calc($thumbnail-size / 2);
+        top: calc($thumbnail-size / 2);
+      }
+    }
+
+    .qty {
+      order: 3;
+      font-size: 14px;
+    }
+
+    .remove {
+      order: 4;
+      position: absolute;
+      display: inline-block;
+      width: 15px;
+      height: 18px;
+      font-size: 0;
+      background: $trash-icon 0 0 no-repeat;
+      right: $padding;
+      bottom: $padding;
+    }
+  }
+}
+
+.woocommerce-mini-cart__total {
+  padding: 15px $main-padding;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  margin-bottom: 0;
+  border-top: 1px solid $elements-color;
+  color: $title-color;
+  font-family: $title-family;
+  background-color: $invert-color;
+
+  strong {
+    margin: 0;
+    font-weight: normal;
+  }
+}
+
+.woocommerce-mini-cart__buttons {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+
+  a.button {
+    @extend .btn;
+
+    margin: 0;
+    font-size: 15px;
+    height: 47px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    width: calc(50% - 7px);
+    min-width: auto;
+    max-width: none;
+
+    &:not(.checkout) {
+      background-color: $invert-color;
+      color: $text-color;
+      border-color: $text-color;
+    }
+  }
+}

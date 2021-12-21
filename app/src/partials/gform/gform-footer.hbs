@@ -1,0 +1,36 @@
+{{! Garvity forms footer component https://docs.gravityforms.com/form-footer/ }}
+<div class="gform_footer top_label">
+  {{! top_label class -> https://prnt.sc/i2p29u }}
+  {{#if beforeInputText}}
+    {{{beforeInputText}}}
+  {{/if}}
+
+  {{#ifequal type 'button'}}
+    <input type='submit' class='gform_button button' value='{{text}}'
+           onclick='if(window["gf_submitting_{{gFormIndex}}"]){return false;}  window["gf_submitting_{{gFormIndex}}"]=true;  '
+           onkeypress='if( event.keyCode === 13 ){ if(window["gf_submitting_{{gFormIndex}}"]){return false;} window["gf_submitting_{{gFormIndex}}"]=true;  jQuery("#gform_{{gFormIndex}}").trigger("submit",[true]); }'>
+  {{/ifequal}}
+
+  {{#ifequal type 'image'}}
+    <input type='image'
+           src='{{text}}'
+           id='gform_submit_button_{{gFormIndex}}'
+           class='gform_button gform_image_button'
+           alt='Submit'
+           onclick='if(window["gf_submitting_{{gFormIndex}}"]){return false;}  window["gf_submitting_{{gFormIndex}}"]=true;  '
+           onkeypress='if( event.keyCode === 13 ){ if(window["gf_submitting_{{gFormIndex}}"]){return false;} window["gf_submitting_{{gFormIndex}}"]=true;  jQuery("#gform_{{gFormIndex}}").trigger("submit",[true]); }'>
+  {{/ifequal}}
+  {{! default gravity forms hidden fields }}
+  <input type='hidden' class='gform_hidden' name='is_submit_{{gFormIndex}}' value='1'>
+  <input type='hidden' class='gform_hidden' name='gform_submit' value='{{gFormIndex}}'>
+  <input type='hidden' class='gform_hidden' name='gform_unique_id' value=''>
+  <input type='hidden' class='gform_hidden' name='state_{{gFormIndex}}'
+         value='WyJbXSIsIjI4ZTYyMGI3NzdjMzJjM2JkN2YyNzZkNzZlMWNhNWIzIl0='>
+  <input type='hidden' class='gform_hidden' name='gform_target_page_number_{{gFormIndex}}'
+         id='gform_target_page_number_{{gFormIndex}}'
+         value='0'>
+  <input type='hidden' class='gform_hidden' name='gform_source_page_number_{{gFormIndex}}'
+         id='gform_source_page_number_{{gFormIndex}}'
+         value='1'>
+  <input type='hidden' name='gform_field_values' value=''>
+</div>

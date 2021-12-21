@@ -1,0 +1,116 @@
+.login-section {
+  .inner {
+    max-width: 685px;
+  }
+
+  .guest-checkout {
+    @extend .woocommerce-section .block-for-extend;
+
+    margin-bottom: $main-padding;
+
+    h2 {
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      width: 100%;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (--woo-2) {
+      margin-bottom: calc($main-padding * 2);
+    }
+  }
+
+  .tabs-nav {
+    display: flex;
+    padding: 0;
+    margin: 0;
+
+    li {
+      cursor: pointer;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      height: 83px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      width: 100%;
+
+      &.active {
+        background-color: $main-bg;
+      }
+
+      &:not(.active) {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .tab {
+    @extend .woocommerce-section .block-for-extend;
+  }
+
+  .woocommerce-form {
+    .woocommerce-form-login__rememberme {
+      font-size: 14px;
+    }
+
+    .woocommerce-LostPassword {
+      font-size: 14px;
+      float: right;
+    }
+
+    &.woocommerce-form-register {
+      p:last-child {
+        font-size: 14px;
+
+        a {
+          font-weight: bold;
+        }
+      }
+    }
+
+    @media (--woo-2) {
+      max-width: 60%;
+      margin: 0 auto;
+    }
+  }
+
+  .woocommerce-ResetPassword {
+    @extend .woocommerce-section .block-for-extend;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    p:not(.form-row) {
+      width: 100%;
+    }
+
+    .form-row:last-of-type {
+      text-align: right;
+    }
+
+    p + div + .form-row:last-of-type {
+      @media (--woo-1) {
+        position: relative;
+        width: 50%;
+
+        .button {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
