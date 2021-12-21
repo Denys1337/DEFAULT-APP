@@ -1,0 +1,20 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42" width="42" height="42">
+	<title>New Project</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="M11 11L31 11L31 31L11 31L11 11Z" />
+		</clipPath>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #ffd401 } 
+		.shp1 { fill: #ffffff } 
+	</style>
+	<path id="Layer" class="shp0" d="M0 21C0 9.4 9.4 0 21 0L21 0C32.6 0 42 9.4 42 21L42 21C42 32.6 32.6 42 21 42L21 42C9.4 42 0 32.6 0 21L0 21Z" />
+	<g id="Clip-Path" clip-path="url(#cp1)">
+		<g id="Layer">
+			<path id="Layer" class="shp0" d="M11 11L31 11L31 31L11 31L11 11Z" />
+			<path id="Layer" fill-rule="evenodd" class="shp1" d="M11.35 19.63L30.26 12.33C30.66 12.18 31.08 12.53 30.99 12.95L27.59 29.27C27.51 29.66 27.06 29.83 26.74 29.6L22.11 26.24C21.83 26.03 21.45 26.05 21.18 26.26L18.61 28.36C18.31 28.6 17.86 28.47 17.75 28.1L15.96 22.36L11.35 20.64C10.89 20.47 10.88 19.81 11.35 19.63ZM17.06 22.47L18.04 25.89C18.1 26.13 18.46 26.11 18.49 25.86L18.74 23.98C18.79 23.63 18.96 23.3 19.22 23.06L26.65 16.15C26.79 16.02 26.63 15.8 26.46 15.9L17.46 21.45C17.11 21.66 16.95 22.08 17.06 22.47Z" />
+		</g>
+	</g>
+</svg>

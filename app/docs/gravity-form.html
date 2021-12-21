@@ -1,0 +1,1206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gravity form Demo</title>
+  <script>
+    ( function( a, b, c, d ) {
+      c = '';
+      for ( let i = 0; i < b; i++ ) {
+        if ( 'fontLoaderCss' === localStorage.key( i ).substring( 0, 13 ) ) {
+          c += "\r\n" + localStorage.getItem( localStorage.key( i ) );
+        }
+      }
+
+      if ( c ) {
+        d = a.createElement( 'style' );
+        d.rel = 'stylesheet';
+        a.head.appendChild( d );
+        d.textContent = c;
+      }
+    } )( document, localStorage.length );
+  </script>
+  <link rel="stylesheet" href="css/styles.css" id="theme-styles-css">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "Your Organization Name",
+      "url": "http://www.example.com",
+      "logo": "http://www.example.com/images/logo.png",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-111-111-1111",
+          "contactType": "customer service"
+        }
+      ],
+      "sameAs": [
+        "http://www.facebook.com/your-profile",
+        "http://www.twitter.com/yourProfile",
+        "http://plus.google.com/your_profile"
+      ]
+    }
+  </script>
+</head>
+<body class="">
+  <div class="container">
+    <aside class="menu-wrap" aria-hidden="true">
+    
+      <ul class="second-nav mobile-nav">
+        <li class="phone-link"><a href="tel:#">(123) 456-7890</a></li>
+        <li class="btn-link"><a href="#">Get A Quote</a></li>
+        <li class="cart menu-item">
+          <a href="#">
+            Cart
+             <span class="cart-total">    <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#36;</span>0.00</bdi></span>
+        </span>
+             <span class="cart-count">0</span>
+          </a>
+          <div class="menu-cart">
+            <div class="title">
+              <h2>Cart<span>0 items</span></h2>
+              <a href="#" class="close" data-close>
+                <span class="screen-reader-text">Close cart</span>
+              </a>
+            </div>
+              <div class="empty">
+                Empty Cart
+              </div>
+          </div>
+        </li>
+      </ul>
+    
+      <ul class="main-nav mobile-nav">
+        <li class="home-icon"><a href="#">Home</a></li>
+        <li class="menu-item-has-children current-menu-item">
+          <a href="#">About Us</a>
+          <ul class="sub-menu">
+            <li><a href="#">Sub menu item</a></li>
+            <li><a href="#">Sub menu item</a></li>
+            <li><a href="#">Sub menu item</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    
+      <button class="close-button" id="close-button"><span class="screen-reader-text">Close Menu</span></button>
+    </aside>
+    <div class="content-wrap">
+      
+      <header class="header">
+       <div class="inner">
+         <div class="top-block">
+           <h3>
+      2317 Fort Worth Hwy<br>
+      Weatherford, Texas 76087
+      
+           </h3>
+           <div class="logo">
+             <img src="images/logo.png" alt="">
+             <p>
+              WE SPECIALIZE IN TREE SALES & INSTALLATION
+             </p>
+           </div>
+           <div class="contact">
+             <h4>
+              Open Monday-Saturday<br>
+              9 AM – 5 PM
+             </h4>
+             <a href="tel:817-596-0003">817-596-0003</a>
+      
+           </div>
+           
+         </div>
+          </div>
+        <div class="nav">
+          <div class="nav__block">
+          <ul class="menu">
+            <li><a href="#"><img src="images/home.svg"></a></li>
+            <li><a href="#">Our Trees <img src="images/Vector.svg"></a> </li>
+            <li><a href="#">Flowers</a></li>
+            <li><a href="#">Shrubs</a></li>
+            <li><a href="#">Herbs</a></li>
+            <li><a href="#">Fertilizer</a></li>
+            <li><a href="#">Soil & Admendments</a></li>
+            <li><a href="#">Contact Us</a></li>
+            
+          </ul>
+          <a href="#" class="reqest">Request a Quote</a>
+          </div>
+            <div class="hamburger-menu">
+              <input id="menu__toggle" type="checkbox" />
+              <label class="menu__btn" for="menu__toggle">
+                <span></span>
+              </label>
+              <ul class="menu__box">
+                <li>
+                  <a class="menu__item" href="#">Our Trees</a></i>
+                </li>
+                <li><a class="menu__item" href="#">Flowers</a></li>
+                <li><a class="menu__item" href="#">Shrubs</a></li>
+                <li><a class="menu__item" href="#">Herbs</a></li>
+                <li><a class="menu__item" href="#">Fertilizer</a></li>
+                <li><a class="menu__item" href="#">Soil & Admendments</a></li>
+                <li><a class="menu__item" href="#">Contact Us</a></li>
+                <li>
+                </li>
+            
+              </ul>
+            
+            </div>
+          
+        </div>
+      
+      
+      </header>
+      <main class="main">
+        
+<section class="form-section">
+  <div class="inner">
+    <h1 class="section-title">First post</h1>
+    <div class="breadcrumbs">
+      <div class="inner">
+        <span>
+          <a href="#">Home</a> 
+          <span class="breadcrumb_last" aria-current="page">
+            Gravity form Demo
+          </span>
+        </span>
+      </div>
+    </div>
+    <div class="breadcrumbs">
+      <div class="inner">
+        <span>
+          <a href="#">Home</a> 
+          <span class="breadcrumb_last" aria-current="page">
+            Other Title Page
+          </span>
+        </span>
+      </div>
+    </div>
+    <div class="breadcrumbs">
+      <div class="inner">
+        <span>
+          <a href="#">Home</a> 
+            <span>
+              <a href="#">parent 1/parent 2/parent 3</a>
+          <span class="breadcrumb_last" aria-current="page">
+            Gravity form Demo
+          </span>
+            </span>
+        </span>
+      </div>
+    </div>
+
+
+  <div class="gf_browser_chrome gform_wrapper "
+       id="gform_wrapper_226">  
+    <form method="post" enctype="multipart/form-data" id="gform_226"
+          class=""
+          action="/">
+      
+      
+      <div class="gform_body">
+        <ul class="gform_fields top_label form_sublabel_below description_below">
+                  
+                  <li class="gfield  test-class gfield_contains_required  field_sublabel_below field_description_below  gfield_visibility_visible"> 
+                    <label class="gfield_label" for="input_226_2101">
+                      Label text<span class="gfield_required">*</span>
+                    </label>
+                    <div class="ginput_container ginput_container_text">
+                      <input
+                              name="input_2101"
+                              id="input_226_2101"
+                              type="text"
+                              value=""
+                              class="medium"
+                              placeholder="placeholder"
+                              aria-required="true"
+                              aria-invalid="false"
+                      > 
+                    </div>
+                      <div class="gfield_description">Description text</div>
+                  </li>
+          
+          <li class="gfield gfield_html  field_sublabel_below field_description_above gfield_visibility_visible">
+                      <div>
+                        <img src="https://image.prntscr.com/image/v8LoET9oRE6DKF1HGbUJ2A.png" width="120" height="120" alt="" title="">
+                        <h4>This is a block of inline HTML content</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            
+                        <p> Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+            
+                        <p> In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, </p>
+                      </div>
+          </li>
+                  
+                  <li class="gfield  test-class gfield_contains_required  field_sublabel_below field_description_below  gfield_visibility_visible"> 
+                    <label class="gfield_label" for="input_226_2102">
+                      Label text<span class="gfield_required">*</span>
+                    </label>
+                    <div class="ginput_container ginput_container_number">
+                      <input
+                              name="input_2102"
+                              id="input_226_2102"
+                              type="number"
+                              step="any"
+                              min="1"
+                              max="100"
+                              value=""
+                              class="medium"
+                              placeholder="placeholder"
+                              aria-required="true"
+                              aria-invalid="false"
+                      >
+                        <div class="instruction ">
+                           
+                            Please enter a value between <strong>1</strong> and <strong>100</strong>.
+                                </div>
+                    </div>
+                      <div class="gfield_description">Description text</div>
+                  </li>
+                  
+                  <li class="gfield  test-class gfield_contains_required  field_sublabel_below field_description_below  gfield_visibility_visible">
+                    <label class="gfield_label" for="input_226_2103">
+                      Label text<span class="gfield_required">*</span>
+                    </label>
+                    <div class="ginput_container ginput_container_select">
+                      <select
+                              name="input_2103"
+                              id="input_226_2103"
+                              class="medium gfield_select"
+                              aria-required="true"
+                              aria-invalid="false">
+                          <option value="" selected="selected" class="gf_placeholder">placeholder</option>
+                        <option value="First Choice">First Choice</option>
+                        <option value="Second Choice">Second Choice</option>
+                        <option value="Third Choice">Third Choice</option>
+                      </select>
+                    </div>
+                      <div class="gfield_description">Description text</div>
+                  </li>
+                  
+                  <li class="gfield  test-class gfield_contains_required  field_sublabel_below field_description_below  gfield_visibility_visible"> 
+                    <label class="gfield_label" for="input_226_2104">
+                      Label text<span class="gfield_required">*</span>
+                    </label>
+                    <div class="ginput_container ginput_container_multiselect">
+                      <select multiple="multiple" size="7" name="input_2104[]"
+                              id="input_226_2104" class="medium gfield_select">
+                        <option value="First Choice">First Choice</option>
+                        <option value="Second Choice">Second Choice</option>
+                        <option value="Third Choice">Third Choice</option>
+                      </select>
+                    </div>
+                      <div class="gfield_description">Description text</div>
+                  </li>
+                  
+                  <li class="gfield  test-class gfield_contains_required  field_sublabel_below field_description_below  gfield_visibility_visible"> 
+                    <label class="gfield_label" for="input_226_2105">
+                      Label text<span class="gfield_required">*</span>
+                    </label>
+                    <div class="ginput_container ginput_container_textarea">
+                  		<textarea
+                              name="input_2105"
+                              id="input_226_2105"
+                              class="textarea medium"
+                              placeholder=""
+                              aria-required="true"
+                              aria-invalid="false"
+                              rows="10"
+                              cols="50"
+                      ></textarea>
+                        <div class="charleft ginput_counter warningTextareaInfo">1 of  max characters</div>
+                    </div>
+                      <div class="gfield_description">Description text</div>
+                  </li>
+                  
+                  <li class="gfield gsection test-class field_sublabel_below field_description_below gfield_visibility_visible"> 
+                    <div class="gsection_title">Label text</div>
+                      <div class="gsection_description">Description text</div>
+                  </li>
+          
+          <li
+                  id="field_226_2106"
+                  class="gfield  test-class gfield_contains_required field_sublabel_below field_description_below  gfield_visibility_visible"
+          > 
+            <label class="gfield_label">
+              Label text<span class="gfield_required">*</span>
+            </label>
+            <div class="ginput_container ginput_container_checkbox">
+              <ul class="gfield_checkbox">
+                          
+                          <li>
+                            <input
+                                    type="checkbox"
+                                    value=""
+                                    id="choice_226_2106_1"
+                            >
+                            <label for="choice_226_2106_1">Checkbox label text</label>
+                          </li>
+              </ul>
+            </div>
+              <div class="gfield_description">Description text</div>
+          </li>
+          
+          <li
+                  id="field_226_2107"
+                  class="gfield  test-class gfield_contains_required field_sublabel_below field_description_below  gfield_visibility_visible"
+          > 
+            <legend class="gfield_label">
+              Label text<span class="gfield_required">*</span>
+            </legend>
+            <div class="ginput_container ginput_container_radio">
+              <ul class="gfield_radio">
+                          
+                          <li class="gchoice gchoice_226_2107_1">
+                            <input
+                                type="radio"
+                                name="input_2107"
+                                value=""
+                                id="choice_226_2107_2" checked
+                            >
+                            <label for="choice_226_2107_2">radioButton label text</label>
+                          </li>
+                 
+                  <li>
+                    <input name='input_2107' type='radio' value='gf_other_choice'
+                           onfocus="jQuery(this).next('input').focus();">
+                    <input id='input_226_2107_other' name='input_2107_other'
+                           type='text' value='Other' aria-label='Other'
+                           onfocus='jQuery(this).prev("input")[0].click(); if(jQuery(this).val() === "Other") { jQuery(this).val(""); }'
+                           onblur='if(jQuery(this).val().replace(" ", "") === "") { jQuery(this).val("Other"); }'
+                    >
+                  </li>
+              </ul>
+            </div>
+              <div class="gfield_description">Description text</div>
+          </li>
+                  
+                  <li
+                          id="field_226_2108"
+                          class="gfield  test-class gfield_contains_required  field_sublabel_below field_description_below  gfield_visibility_visible"
+                  > 
+                    <label class="gfield_label">
+                      Label text<span class="gfield_required">*</span>
+                    </label>
+                    <div class="ginput_container ginput_container_fileupload">
+                        <div id="gform_multifile_upload_226_2108"
+                             data-settings="{&quot;runtimes&quot;:&quot;html5,flash,html4&quot;,&quot;browse_button&quot;:&quot;gform_browse_button_226_2108&quot;,&quot;container&quot;:&quot;gform_multifile_upload_226_2108&quot;,&quot;drop_element&quot;:&quot;gform_drag_drop_area_226_2108&quot;,&quot;filelist&quot;:&quot;gform_preview_226_2108&quot;,&quot;unique_names&quot;:true,&quot;file_data_name&quot;:&quot;file&quot;,&quot;url&quot;:&quot;http:\/\/nwbp.devbucket.me\/?gf_page=9a21cfc692a32ed&quot;,&quot;flash_swf_url&quot;:&quot;http:\/\/nwbp.devbucket.me\/wp-includes\/js\/plupload\/plupload.flash.swf&quot;,&quot;silverlight_xap_url&quot;:&quot;http:\/\/nwbp.devbucket.me\/wp-includes\/js\/plupload\/plupload.silverlight.xap&quot;,&quot;filters&quot;:{&quot;mime_types&quot;:[{&quot;title&quot;:&quot;Allowed Files&quot;,&quot;extensions&quot;:&quot;jpg,gif,png,pdf&quot;}],&quot;max_file_size&quot;:&quot;1048576b&quot;},&quot;multipart&quot;:true,&quot;urlstream_upload&quot;:false,&quot;multipart_params&quot;:{&quot;form_id&quot;:8,&quot;field_id&quot;:19},&quot;gf_vars&quot;:{&quot;max_files&quot;:0,&quot;message_id&quot;:&quot;gform_multifile_messages_226_2108&quot;,&quot;disallowed_extensions&quot;:[&quot;php&quot;,&quot;asp&quot;,&quot;aspx&quot;,&quot;cmd&quot;,&quot;csh&quot;,&quot;bat&quot;,&quot;html&quot;,&quot;htm&quot;,&quot;hta&quot;,&quot;jar&quot;,&quot;exe&quot;,&quot;com&quot;,&quot;js&quot;,&quot;lnk&quot;,&quot;htaccess&quot;,&quot;phtml&quot;,&quot;ps1&quot;,&quot;ps2&quot;,&quot;php3&quot;,&quot;php4&quot;,&quot;php5&quot;,&quot;php6&quot;,&quot;py&quot;,&quot;rb&quot;,&quot;tmp&quot;]}}"
+                             class="gform_fileupload_multifile"
+                             style="position: relative;">
+                          <div id="gform_drag_drop_area_226_2108" class="gform_drop_area"
+                               style="position: relative;">
+                            <span class="gform_drop_instructions">Drop files here or </span>
+                            <input
+                                    id="gform_browse_button_226_2108"
+                                    type="button"
+                                    value="Select files"
+                                    class="button gform_button_select_files"
+                                    aria-describedby="extensions_message_226_2108"
+                                    style="position: relative; z-index: 1;"
+                            >
+                          </div>
+                          <div id="html5_1c67aebrg11dsnr2cbain1b3u3_container" class="moxie-shim moxie-shim-html5"
+                               style="position: absolute; top: 57px; left: 486px; width: 74px; height: 18px; overflow: hidden; z-index: 0;">
+                            <input
+                                    id="html5_1c67aebrg11dsnr2cbain1b3u3"
+                                    type="file"
+                                    style="font-size: 999px; opacity: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                                    multiple=""
+                                    accept="image/jpeg,.jpg,image/gif,.gif,image/png,.png,application/pdf,.pdf"
+                            >
+                          </div>
+                        </div>
+                        <span id="extensions_message_226_2108" class="screen-reader-text">
+                  				Accepted file types: jpg, gif, png, pdf.
+                  			</span>
+                      <div class="validation_message">
+                      </div>
+                    </div>
+                      <div class="gfield_description">Description text</div>
+                  </li>
+                  
+                  <li class="gfield  test-class gfield_contains_required  field_sublabel_below field_description_below  gfield_visibility_visible">
+                    <label class="gfield_label" for="input_226_2109">
+                      Label text<span class="gfield_required">*</span>
+                    </label>
+                    <div class="ginput_container ginput_container_email">
+                        <input
+                            name="input_2109"
+                            id="input_226_2109"
+                            type="text" value=""
+                            class="medium"
+                            placeholder="email"
+                            aria-required="true"
+                            aria-invalid="false"
+                        > 
+                    </div>
+                      <div class="gfield_description">Description text</div>
+                  </li>
+                  
+                  <li class="gfield  test-class gfield_contains_required  field_sublabel_below field_description_below  gfield_visibility_visible"> 
+                    <label class="gfield_label" for="input_226_2110">
+                      Label text<span class="gfield_required">*</span>
+                    </label>
+                    <div class="ginput_container ginput_container_text">
+                      <input
+                              name="input_2110"
+                              id="input_226_2110"
+                              type="url"
+                              value=""
+                              class="medium"
+                              placeholder="website"
+                              aria-required="true"
+                              aria-invalid="false"
+                      > 
+                    </div>
+                      <div class="gfield_description">Description text</div>
+                  </li>
+                  
+                  <li
+                          id="field_226_2111"
+                          class="gfield  test-class gfield_contains_required  field_sublabel_below field_description_below  gfield_visibility_visible"> 
+                    <label class="gfield_label gfield_label_before_complex">
+                      Label text<span class="gfield_required">*</span>
+                    </label>
+                     
+                      <div class="ginput_complex ginput_container  has_street has_street2 has_city has_state has_zip has_country ginput_container_address gfield_trigger_change"> 
+                          <span class="ginput_full address_line_1" id="input_226_2111_1_container">
+                  					<input
+                                    type="text"
+                                    name="input_2111.1"
+                                    id="input_226_2111_1"
+                                    value=""
+                            >
+                  					<label for="input_226_2111_1"
+                                   id="input_226_2111_1_label">Street Address</label>
+                          		</span>
+                          <span class="ginput_full address_line_2" id="input_226_2111_2_container">
+                  					<input
+                                    type="text"
+                                    name="input_2111.2"
+                                    id="input_226_2111_2"
+                                    value=""
+                            >
+                  					<label for="input_226_2111_2"
+                                   id="input_226_2111_2_label">Address Line 2</label>
+                          		</span>
+                          <span class="ginput_left address_city" id="input_226_2111_3_container">
+                            			<input
+                                          type="text"
+                                          name="input_2111.3"
+                                          id="input_226_2111_3"
+                                          value=""
+                                  >
+                           			<label for="input_226_2111_3"
+                                       id="input_226_2111_3_label">City</label>
+                          		</span>
+                          <span class="ginput_right address_state" id="input_226_2111_4_container">
+                  					<input
+                                    type="text"
+                                    name="input_2111.4"
+                                    id="input_226_2111_4"
+                                    value=""
+                            >
+                  					<label for="input_226_2111_4"
+                                   id="input_226_2111_4_label">State / Province / Region</label>
+                          		</span>
+                          <span class="ginput_left address_zip" id="input_226_2111_5_container">
+                  					<input
+                                    type="text"
+                                    name="input_2111.5" id="input_226_2111_5"
+                                    value=""
+                            >
+                  					<label for="input_226_2111_5"
+                                   id="input_226_2111_5_label">ZIP / Postal Code</label>
+                          		</span>
+                          <span class="ginput_right address_country" id="input_226_2111_6_container">
+                  					<select name="input_2111.6" id="input_226_2111_6">
+                  						<option value="" selected="selected">&nbsp;</option>
+                  						<option value="Afghanistan">Afghanistan</option>
+                  						<option value="Albania">Albania</option>
+                  						<option value="Algeria">Algeria</option>
+                  						<option value="American Samoa">American Samoa</option>
+                  						<option value="Andorra">Andorra</option>
+                  						<option value="Angola">Angola</option>
+                  						<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                  						<option value="Argentina">Argentina</option>
+                  						<option value="Armenia">Armenia</option>
+                  						<option value="Australia">Australia</option>
+                  						<option value="Austria">Austria</option>
+                  						<option value="Azerbaijan">Azerbaijan</option>
+                  						<option value="Bahamas">Bahamas</option>
+                  						<option value="Bahrain">Bahrain</option>
+                  						<option value="Bangladesh">Bangladesh</option>
+                  						<option value="Barbados">Barbados</option>
+                  						<option value="Belarus">Belarus</option>
+                  						<option value="Belgium">Belgium</option>
+                  						<option value="Belize">Belize</option>
+                  						<option value="Benin">Benin</option>
+                  						<option value="Bermuda">Bermuda</option>
+                  						<option value="Bhutan">Bhutan</option>
+                  						<option value="Bolivia">Bolivia</option>
+                  						<option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                  						<option value="Botswana">Botswana</option>
+                  						<option value="Brazil">Brazil</option>
+                  						<option value="Brunei">Brunei</option>
+                  						<option value="Bulgaria">Bulgaria</option>
+                  						<option value="Burkina Faso">Burkina Faso</option>
+                  						<option value="Burundi">Burundi</option>
+                  						<option value="Cambodia">Cambodia</option>
+                  						<option value="Cameroon">Cameroon</option>
+                  						<option value="Canada">Canada</option>
+                  						<option value="Cape Verde">Cape Verde</option>
+                  						<option value="Cayman Islands">Cayman Islands</option>
+                  						<option value="Central African Republic">Central African Republic</option>
+                  						<option value="Chad">Chad</option>
+                  						<option value="Chile">Chile</option>
+                  						<option value="China">China</option>
+                  						<option value="Colombia">Colombia</option>
+                  						<option value="Comoros">Comoros</option>
+                  						<option value="Congo, Democratic Republic of the">Congo, Democratic Republic of the</option>
+                  						<option value="Congo, Republic of the">Congo, Republic of the</option>
+                  						<option value="Costa Rica">Costa Rica</option>
+                  						<option value="Côte d'Ivoire">Côte d'Ivoire</option>
+                  						<option value="Croatia">Croatia</option>
+                  						<option value="Cuba">Cuba</option>
+                  						<option value="Curaçao">Curaçao</option>
+                  						<option value="Cyprus">Cyprus</option>
+                  						<option value="Czech Republic">Czech Republic</option>
+                  						<option value="Denmark">Denmark</option>
+                  						<option value="Djibouti">Djibouti</option>
+                  						<option value="Dominica">Dominica</option>
+                  						<option value="Dominican Republic">Dominican Republic</option>
+                  						<option value="East Timor">East Timor</option>
+                  						<option value="Ecuador">Ecuador</option>
+                  						<option value="Egypt">Egypt</option>
+                  						<option value="El Salvador">El Salvador</option>
+                  						<option value="Equatorial Guinea">Equatorial Guinea</option>
+                  						<option value="Eritrea">Eritrea</option>
+                  						<option value="Estonia">Estonia</option>
+                  						<option value="Ethiopia">Ethiopia</option>
+                  						<option value="Faroe Islands">Faroe Islands</option>
+                  						<option value="Fiji">Fiji</option>
+                  						<option value="Finland">Finland</option>
+                  						<option value="France">France</option>
+                  						<option value="French Polynesia">French Polynesia</option>
+                  						<option value="Gabon">Gabon</option>
+                  						<option value="Gambia">Gambia</option>
+                  						<option value="Georgia">Georgia</option>
+                  						<option value="Germany">Germany</option>
+                  						<option value="Ghana">Ghana</option>
+                  						<option value="Greece">Greece</option>
+                  						<option value="Greenland">Greenland</option>
+                  						<option value="Grenada">Grenada</option>
+                  						<option value="Guam">Guam</option>
+                  						<option value="Guatemala">Guatemala</option>
+                  						<option value="Guinea">Guinea</option>
+                  						<option value="Guinea-Bissau">Guinea-Bissau</option>
+                  						<option value="Guyana">Guyana</option>
+                  						<option value="Haiti">Haiti</option>
+                  						<option value="Honduras">Honduras</option>
+                  						<option value="Hong Kong">Hong Kong</option>
+                  						<option value="Hungary">Hungary</option>
+                  						<option value="Iceland">Iceland</option>
+                  						<option value="India">India</option>
+                  						<option value="Indonesia">Indonesia</option>
+                  						<option value="Iran">Iran</option>
+                  						<option value="Iraq">Iraq</option>
+                  						<option value="Ireland">Ireland</option>
+                  						<option value="Israel">Israel</option>
+                  						<option value="Italy">Italy</option>
+                  						<option value="Jamaica">Jamaica</option>
+                  						<option value="Japan">Japan</option>
+                  						<option value="Jordan">Jordan</option>
+                  						<option value="Kazakhstan">Kazakhstan</option>
+                  						<option value="Kenya">Kenya</option>
+                  						<option value="Kiribati">Kiribati</option>
+                  						<option value="North Korea">North Korea</option>
+                  						<option value="South Korea">South Korea</option>
+                  						<option value="Kosovo">Kosovo</option>
+                  						<option value="Kuwait">Kuwait</option>
+                  						<option value="Kyrgyzstan">Kyrgyzstan</option>
+                  						<option value="Laos">Laos</option>
+                  						<option value="Latvia">Latvia</option>
+                  						<option value="Lebanon">Lebanon</option>
+                  						<option value="Lesotho">Lesotho</option>
+                  						<option value="Liberia">Liberia</option>
+                  						<option value="Libya">Libya</option>
+                  						<option value="Liechtenstein">Liechtenstein</option>
+                  						<option value="Lithuania">Lithuania</option>
+                  						<option value="Luxembourg">Luxembourg</option>
+                  						<option value="Macedonia">Macedonia</option>
+                  						<option value="Madagascar">Madagascar</option>
+                  						<option value="Malawi">Malawi</option>
+                  						<option value="Malaysia">Malaysia</option>
+                  						<option value="Maldives">Maldives</option>
+                  						<option value="Mali">Mali</option>
+                  						<option value="Malta">Malta</option>
+                  						<option value="Marshall Islands">Marshall Islands</option>
+                  						<option value="Mauritania">Mauritania</option>
+                  						<option value="Mauritius">Mauritius</option>
+                  						<option value="Mexico">Mexico</option>
+                  						<option value="Micronesia">Micronesia</option>
+                  						<option value="Moldova">Moldova</option>
+                  						<option value="Monaco">Monaco</option>
+                  						<option value="Mongolia">Mongolia</option>
+                  						<option value="Montenegro">Montenegro</option>
+                  						<option value="Morocco">Morocco</option>
+                  						<option value="Mozambique">Mozambique</option>
+                  						<option value="Myanmar">Myanmar</option>
+                  						<option value="Namibia">Namibia</option>
+                  						<option value="Nauru">Nauru</option>
+                  						<option value="Nepal">Nepal</option>
+                  						<option value="Netherlands">Netherlands</option>
+                  						<option value="New Zealand">New Zealand</option>
+                  						<option value="Nicaragua">Nicaragua</option>
+                  						<option value="Niger">Niger</option>
+                  						<option value="Nigeria">Nigeria</option>
+                  						<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                  						<option value="Norway">Norway</option>
+                  						<option value="Oman">Oman</option>
+                  						<option value="Pakistan">Pakistan</option>
+                  						<option value="Palau">Palau</option>
+                  						<option value="Palestine, State of">Palestine, State of</option>
+                  						<option value="Panama">Panama</option>
+                  						<option value="Papua New Guinea">Papua New Guinea</option>
+                  						<option value="Paraguay">Paraguay</option>
+                  						<option value="Peru">Peru</option>
+                  						<option value="Philippines">Philippines</option>
+                  						<option value="Poland">Poland</option>
+                  						<option value="Portugal">Portugal</option>
+                  						<option value="Puerto Rico">Puerto Rico</option>
+                  						<option value="Qatar">Qatar</option>
+                  						<option value="Romania">Romania</option>
+                  						<option value="Russia">Russia</option>
+                  						<option value="Rwanda">Rwanda</option>
+                  						<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                  						<option value="Saint Lucia">Saint Lucia</option>
+                  						<option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+                  						<option value="Samoa">Samoa</option>
+                  						<option value="San Marino">San Marino</option>
+                  						<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                  						<option value="Saudi Arabia">Saudi Arabia</option>
+                  						<option value="Senegal">Senegal</option>
+                  						<option value="Serbia">Serbia</option>
+                  						<option value="Seychelles">Seychelles</option>
+                  						<option value="Sierra Leone">Sierra Leone</option>
+                  						<option value="Singapore">Singapore</option>
+                  						<option value="Sint Maarten">Sint Maarten</option>
+                  						<option value="Slovakia">Slovakia</option>
+                  						<option value="Slovenia">Slovenia</option>
+                  						<option value="Solomon Islands">Solomon Islands</option>
+                  						<option value="Somalia">Somalia</option>
+                  						<option value="South Africa">South Africa</option>
+                  						<option value="Spain">Spain</option>
+                  						<option value="Sri Lanka">Sri Lanka</option>
+                  						<option value="Sudan">Sudan</option>
+                  						<option value="Sudan, South">Sudan, South</option>
+                  						<option value="Suriname">Suriname</option>
+                  						<option value="Swaziland">Swaziland</option>
+                  						<option value="Sweden">Sweden</option>
+                  						<option value="Switzerland">Switzerland</option>
+                  						<option value="Syria">Syria</option>
+                  						<option value="Taiwan">Taiwan</option>
+                  						<option value="Tajikistan">Tajikistan</option>
+                  						<option value="Tanzania">Tanzania</option>
+                  						<option value="Thailand">Thailand</option>
+                  						<option value="Togo">Togo</option>
+                  						<option value="Tonga">Tonga</option>
+                  						<option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                  						<option value="Tunisia">Tunisia</option>
+                  						<option value="Turkey">Turkey</option>
+                  						<option value="Turkmenistan">Turkmenistan</option>
+                  						<option value="Tuvalu">Tuvalu</option>
+                  						<option value="Uganda">Uganda</option>
+                  						<option value="Ukraine">Ukraine</option>
+                  						<option value="United Arab Emirates">United Arab Emirates</option>
+                  						<option value="United Kingdom">United Kingdom</option>
+                  						<option value="United States">United States</option>
+                  						<option value="Uruguay">Uruguay</option>
+                  						<option value="Uzbekistan">Uzbekistan</option>
+                  						<option value="Vanuatu">Vanuatu</option>
+                  						<option value="Vatican City">Vatican City</option>
+                  						<option value="Venezuela">Venezuela</option>
+                  						<option value="Vietnam">Vietnam</option>
+                  						<option value="Virgin Islands, British">Virgin Islands, British</option>
+                  						<option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                  						<option value="Yemen">Yemen</option>
+                  						<option value="Zambia">Zambia</option>
+                  						<option value="Zimbabwe">Zimbabwe</option>
+                  					</select>
+                            			<label for="input_226_2111_6"
+                                         id="input_226_2111_6_label">Country</label>
+                          		</span>
+                      </div>
+                      <div class="gfield_description">Description text</div>
+                  </li>
+                  <li
+                          id="field_226_2112"
+                          class="gfield  test-class gfield_contains_required  field_sublabel_below field_description_below  gfield_visibility_visible"
+                  >
+                    <label class="gfield_label">
+                      Label text<span class="gfield_required">*</span>
+                    </label>
+                    <div class="ginput_complex ginput_container  has_prefix has_first_name has_middle_name has_last_name has_suffix gf_name_has_5 ginput_container_name gfield_trigger_change">
+                        <span id="input_226_2112_2_container" class="name_prefix name_prefix_select">
+                  				<select name="input_2112.2" id="input_226_2112_2"
+                                  aria-label="Name prefix">
+                  				  <option value="">&nbsp;</option>
+                  				  <option value="Mr.">Mr.</option>
+                  				  <option value="Mrs.">Mrs.</option>
+                  				  <option value="Miss">Miss</option>
+                  				  <option value="Ms.">Ms.</option>
+                  				  <option value="Dr.">Dr.</option>
+                  				  <option value="Prof.">Prof.</option>
+                  				  <option value="Rev.">Rev.</option>
+                  				</select>
+                  				<label for="input_226_2112_2">
+                              Prefix
+                          </label>
+                       		</span>
+                        <span id="input_226_2112_3_container" class="name_first">
+                  				<input
+                                  type="text"
+                                  name="input_2112.3"
+                                  id="input_226_2112_3"
+                                  value="" aria-label="First name"
+                                  aria-required="true"
+                                  aria-invalid="false"
+                                  placeholder=""
+                          >
+                  				<label for="input_226_2112_3">
+                              First
+                          </label>
+                        		</span>
+                        <span id="input_226_2112_4_container" class="name_middle">
+                  				<input
+                                  type="text"
+                                  name="input_2112.4"
+                                  id="input_226_2112_4"
+                                  value=""
+                                  aria-label="Middle name"
+                                  aria-required="true"
+                                  aria-invalid="false"
+                                  placeholder=""
+                          >
+                  				<label for="input_226_2112_4">
+                              Middle
+                          </label>
+                  			</span>
+                        <span id="input_226_2112_6_container" class="name_last">
+                  				<input
+                                  type="text"
+                                  name="input_2112.6"
+                                  id="input_226_2112_6"
+                                  value=""
+                                  aria-label="Last name"
+                                  aria-required="true"
+                                  aria-invalid="false"
+                                  placeholder=""
+                          >
+                  				<label for="input_226_2112_6">
+                              Last
+                          </label>
+                        		</span>
+                        <span id="input_226_2112_226_container" class="name_suffix ">
+                          		<input
+                                      type="text"
+                                      name="input_2112.8"
+                                      id="input_226_2112_8"
+                                      value=""
+                                      aria-label="Name suffix"
+                                      aria-required="true"
+                                      aria-invalid="false"
+                                      placeholder=""
+                              >
+                  				<label for="input_226_2112_8">
+                              Suffix
+                          </label>
+                        		</span>
+                    </div>
+                      <div class="gfield_description">Description text</div>
+                  </li>
+                  
+                  <li
+                          id="field_226_2113"
+                          class="gfield  test-class gfield_contains_required  field_sublabel_below field_description_below  gfield_visibility_visible"
+                  > 
+                    <label class="gfield_label">
+                      Label text<span class="gfield_required">*</span>
+                    </label>
+                    <div class="ginput_container ginput_container_list ginput_list">
+                      <input type='text' id='input_226_2113_shim' style='position:absolute;left:-999em;'
+                             onfocus='jQuery( "#field_226_2113 table tr td:first-child input" ).focus();'>
+                       
+                        <table class="gfield_list gfield_list_container">
+                          <colgroup>
+                              <col id="gfield_list_2113_col_0" class="gfield_list_col_odd">
+                              <col id="gfield_list_2113_col_1" class="gfield_list_col_odd">
+                              <col id="gfield_list_2113_col_2" class="gfield_list_col_odd">
+                            <col id="gfield_list_2113_col_4">
+                          </colgroup>
+                          <thead>
+                          <tr>
+                                <th>Column</th>
+                                <th>Column</th>
+                                <th>Column</th>
+                            <th>&nbsp;</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr class="gfield_list_row_odd gfield_list_group">
+                              <td class="gfield_list_cell gfield_list_2113_cell0"
+                                  data-label="Column 0">
+                                <input type="text" name="input_2113[]" value="">
+                              </td>
+                              <td class="gfield_list_cell gfield_list_2113_cell1"
+                                  data-label="Column 1">
+                                <input type="text" name="input_2113[]" value="">
+                              </td>
+                              <td class="gfield_list_cell gfield_list_2113_cell2"
+                                  data-label="Column 2">
+                                <input type="text" name="input_2113[]" value="">
+                              </td>
+                            <td class="gfield_list_icons">
+                              <img
+                                      src="http://nwbp.devbucket.me/wp-content/plugins/gravityforms/images/list-add.svg"
+                                      class="add_list_item "
+                                      title="Add another row"
+                                      alt="Add a new row"
+                                      onclick="gformAddListItem(this, 0)"
+                                      onkeypress="gformAddListItem(this, 0)"
+                                      style="cursor:pointer;">
+                              <img src="http://nwbp.devbucket.me/wp-content/plugins/gravityforms/images/list-remove.svg"
+                                   class="delete_list_item"
+                                   title="Remove this row"
+                                   alt="Remove this row"
+                                   onclick="gformDeleteListItem(this, 0)"
+                                   onkeypress="gformDeleteListItem(this, 0)"
+                                   style="cursor:pointer; visibility:hidden;">
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                      <div class="gfield_description">Description text</div>
+                  </li>
+                  
+                  <li
+                          id="field_226_2114"
+                          class="gfield  test-class gfield_contains_required  field_sublabel_below field_description_below  gfield_visibility_visible"
+                  > 
+                    <label class="gfield_label">
+                      Label text<span class="gfield_required">*</span>
+                    </label>
+                     
+                      <div class="ginput_container ginput_container_date">
+                        <div class="clear-multi">
+                          <div class="gfield_date_month ginput_container ginput_container_date"
+                               id="input_226_2114_1_container">
+                            <input
+                                    type="text"
+                                    maxlength="2"
+                                    name="input_2114[]"
+                                    id="input_226_2114_1"
+                                    value=""
+                                    placeholder=""
+                            >
+                            <label for="input_226_2114_1">
+                                MM
+                            </label>
+                          </div>
+                          <div class="gfield_date_day ginput_container ginput_container_date"
+                               id="input_226_2114_2_container">
+                            <input
+                                    type="text"
+                                    maxlength="2"
+                                    name="input_2114[]"
+                                    id="input_226_2114_2"
+                                    value=""
+                                    placeholder=""
+                            >
+                            <label for="input_226_2114_2">
+                                DD
+                            </label>
+                          </div>
+                          <div class="gfield_date_year ginput_container ginput_container_date"
+                               id="input_226_2114_3_container">
+                            <input
+                                    type="text"
+                                    maxlength="4"
+                                    name="input_2114[]"
+                                    id="input_226_2114_3"
+                                    value=""
+                                    placeholder=""
+                            >
+                            <label for="input_226_2114_3">
+                                YYYY
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="gfield_description">Description text</div>
+                  </li>
+                  
+                  <li
+                          id="field_226_2115"
+                          class="gfield  test-class gfield_contains_required  field_sublabel_below field_description_below  gfield_visibility_visible"
+                  > 
+                    <label class="gfield_label gfield_label_before_complex">
+                      Label text<span class="gfield_required">*</span>
+                    </label>
+                    <div class="clear-multi">
+                      <div class="gfield_time_hour ginput_container ginput_container_time">
+                        <input
+                                type="text"
+                                maxlength="2"
+                                name="input_2115[]"
+                                id="input_226_2115_1"
+                                value=""
+                        >
+                        <i>:</i>
+                        <label for="input_226_2115_1">
+                            HH
+                        </label>
+                      </div>
+                      <div class="gfield_time_minute ginput_container ginput_container_time">
+                        <input
+                                type="text"
+                                maxlength="2"
+                                name="input_2115[]"
+                                id="input_226_2115_2"
+                                value=""
+                        >
+                        <label for="input_226_2115_2">
+                            MM
+                        </label>
+                      </div>
+                        <div class="gfield_time_ampm ginput_container ginput_container_time">
+                          <select name="input_2115[]" id="input_226_2115_3">
+                            <option value="am">AM</option>
+                            <option value="pm">PM</option>
+                          </select>
+                        </div>
+                    </div>
+                      <div class="gfield_description">Description text</div>
+                  </li>
+                  
+                  <li
+                          id="field_226_2116"
+                          class="gfield  test-class gform_hidden gfield_hidden_product gfield_contains_required gfield_price gfield_price_226_2116 gfield_product_226_2116 field_sublabel_below field_description_below gfield_visibility_visible"
+                  > 
+                    <label class="gfield_label">
+                      Label text<span class="gfield_required">*</span>
+                    </label>
+                        <input
+                              type="hidden"
+                              name="input_2116.1"
+                              value="Label text"
+                              class="gform_hidden"
+                      >
+                      <input
+                              name="input_2116.2"
+                              id="ginput_base_price_226_2116"
+                              type="hidden"
+                              value="$10"
+                              class="gform_hidden ginput_amount"
+                      >
+                      <div class="gfield_description">Description text</div>
+                  </li>
+                  
+                  <li
+                          id="field_226_2117"
+                          class="gfield  test-class  gfield_contains_required gfield_price gfield_price_226_2117 gfield_quantity gfield_quantity_226_2117 field_sublabel_below field_description_below gfield_visibility_visible"> 
+                      <input
+                              name="input_2117"
+                              id="input_226_2117"
+                              type="hidden"
+                              class="gform_hidden"
+                              aria-invalid="false"
+                              value=""
+                      >
+                      <div class="gfield_description">Description text</div>
+                  </li>
+                  
+                  <li class="gfield  test-class gfield_contains_required  field_sublabel_below field_description_below  gfield_visibility_visible"> 
+                    <label class="gfield_label" for="input_226_2118">
+                      Label text<span class="gfield_required">*</span>
+                    </label>
+                     
+                      <div class="ginput_container ginput_container_select">
+                        <select name="input_2118" id="input_226_2118"
+                                class="medium gfield_select" aria-required="true"
+                                aria-invalid="false">
+                          <option value="First Option|0">First Option</option>
+                          <option value="Second Option|3">Second Option +$3.00</option>
+                          <option value="Third Option|4">Third Option +$4.00</option>
+                        </select>
+                      </div>
+                  
+                      <div class="gfield_description">Description text</div>
+                  </li>
+                  
+                  <li
+                          id="field_226_2119"
+                          class="gfield  test-class gfield_contains_required gfield_price gfield_shipping gfield_shipping_2119 field_sublabel_below field_description_below  gfield_visibility_visible"> 
+                      <label class="gfield_label">
+                        Label text<span class="gfield_required">*</span>
+                      </label>
+                      <div class="ginput_container ginput_container_singleshipping">
+                        <input type="hidden" name="input_2119" value="$10.00" class="gform_hidden">
+                        <span class="ginput_shipping_price" id="input_226_2119">$10.00</span>
+                      </div>
+                      <div class="gfield_description">Description text</div>
+                  </li>
+                  
+                  <li
+                          id="field_226_2120"
+                          class="gfield test-class gfield_price gfield_price_226_2121 gfield_total gfield_total_226_2121 field_sublabel_below field_description_below gfield_visibility_visible"
+                  > 
+                    <label class="gfield_label">Label text</label>
+                    <div class="ginput_container ginput_container_total">
+                      <span class="ginput_total ginput_total_2121">$.00</span>
+                      <input
+                              type="hidden"
+                              name="input_2121"
+                              id="input_226_2121"
+                              class="gform_hidden"
+                      >
+                    </div>
+                      <div class="gfield_description">Description text</div>
+                  </li>
+        </ul>
+      </div>
+      
+            <div class="gform_footer top_label">
+                <p>We respect your privacy and will never share your information with any 3rd parties. You must be 18 years or older to redeem 3 day passes.</p>
+            
+                <input type='submit' class='gform_button button' value='Submit'
+                       onclick='if(window["gf_submitting_226"]){return false;}  window["gf_submitting_226"]=true;  '
+                       onkeypress='if( event.keyCode === 13 ){ if(window["gf_submitting_226"]){return false;} window["gf_submitting_226"]=true;  jQuery("#gform_226").trigger("submit",[true]); }'>
+            
+              <input type='hidden' class='gform_hidden' name='is_submit_226' value='1'>
+              <input type='hidden' class='gform_hidden' name='gform_submit' value='226'>
+              <input type='hidden' class='gform_hidden' name='gform_unique_id' value=''>
+              <input type='hidden' class='gform_hidden' name='state_226'
+                     value='WyJbXSIsIjI4ZTYyMGI3NzdjMzJjM2JkN2YyNzZkNzZlMWNhNWIzIl0='>
+              <input type='hidden' class='gform_hidden' name='gform_target_page_number_226'
+                     id='gform_target_page_number_226'
+                     value='0'>
+              <input type='hidden' class='gform_hidden' name='gform_source_page_number_226'
+                     id='gform_source_page_number_226'
+                     value='1'>
+              <input type='hidden' name='gform_field_values' value=''>
+            </div>
+    </form>
+  </div>
+  </div>
+</section>
+
+
+      </main>
+      <footer class="footer">
+        <div class="inner">
+          <div class="wrap">
+            <div class="col col1">
+              <nav class="footer-nav-container">
+                <ul class="footer-nav">
+                  <li class="menu-item-has-children">
+                    <a href="#">HOURS & LOCATION</a>
+                    <ul class="sub-menu">
+                      <li><a href="#">2317 Fort Worth Hwy<br>
+                      Weatherford, Texas 76087</a></li>
+      
+                      <li><a href="#">Mon-Sat: 9 AM – 5 PM<br>
+                      Closed Sunday</a></li>
+                      
+                    </ul>
+                  </li>
+                  <li class="menu-item-has-children" >
+                    <a href="#">JUDY’S RECENT POSTS</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Native trees and shrubs for Bluebirds
+                        Fun with Tillandsias, or air plants<br>
+                        Fall is an Ideal Time to Plant Trees
+                        Drought Tolerant Plants<br>
+                        Urban sprawl and deer-resistant plants</a></li>
+                        
+                    </ul>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a href="#">MENU</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Judy’s Journal</a></li>
+                        <li><a href="#">Shop Online</a></li>
+                        <li><a href="#">Get Financing</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+             
+            </div>
+            <div class="col col2">
+              <div class="text">
+                <p><strong>CONTACT</strong>
+                  <a href="tel:#">817-596-0003</a>
+                  <a href="tel:#">info@stuartnursery.com</a>
+              </div>
+              <div class="social-links">
+                  <h3>Gravity form Demo</h3>
+                <a href="#"><img src="images/fb1.svg" alt=""></a>
+                <a href="#"><img src="images/telega.svg" alt=""></a>
+                <a href="#"><img src="images/instagram1.svg" alt=""></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-line">
+          <div class="inner">
+            <div class="copyright">
+              <p>Copyright © 2020 Stuart Nursery</p>
+              <ul class="links-nav">
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Site Map</a></li>
+              </ul>
+            </div>
+            <div class="by">
+              <p>Dallas WordPress Development:<a href="#">Web-loft Design</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!-- ================================================== -->
+  <!-- This part is for including in html only, not for WP -->
+  <!-- ================================================== -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="//nwbp.devbucket.me/wp-content/plugins/gravityforms/js/gravityforms.min.js"></script>
+  <script src="//nwbp.devbucket.me/wp-content/plugins/gravityforms/js/jquery.json.min.js"></script>
+  <script id='theme-init-js-extra'>
+    const theme = {
+      'url': 'file:' === location.protocol ? '' : location.pathname.startsWith( '/www/' ) ? '/www/' : '/',
+      'ajaxUrl': '\/wp-admin\/admin-ajax.php',
+      'ajaxNonce': 'd0b7158aec',
+      'googleMapsApiKey': 'AIzaSyC1BgSVg5b7vMGqbjalTl_0Rb9LmsrMpWE'
+    };
+    const theme_i18n = { 'more': 'View More', 'less': 'View Less' };
+  </script>
+  <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+  <!-- This part is for including in html only, not for WP -->
+  <!-- ================================================== -->
+  <script src="js/init.js"></script>
+</body>
+</html>
